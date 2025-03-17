@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Getting started (what is IDE?) | Quick R/Python Beginner Guide for Ecologists</title>
+  <meta name="description" content="Chapter 1 Getting started (what is IDE?) | Quick R/Python Beginner Guide for Ecologists" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Getting started (what is IDE?) | Quick R/Python Beginner Guide for Ecologists" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Getting started (what is IDE?) | Quick R/Python Beginner Guide for Ecologists" />
+  
+  
+  
+
+<meta name="author" content="Oleksii Dubovyk" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="objects.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R/Python Cheatsheet</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html"><i class="fa fa-check"></i><b>1</b> Getting started (what is IDE?)</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#python"><i class="fa fa-check"></i><b>1.1</b> Python</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#installing-python"><i class="fa fa-check"></i><b>1.1.1</b> Installing Python</a></li>
+<li class="chapter" data-level="1.1.2" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#visual-studio-code"><i class="fa fa-check"></i><b>1.1.2</b> Visual Studio Code</a></li>
+<li class="chapter" data-level="1.1.3" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#pycharm"><i class="fa fa-check"></i><b>1.1.3</b> PyCharm</a></li>
+<li class="chapter" data-level="1.1.4" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#spyder"><i class="fa fa-check"></i><b>1.1.4</b> Spyder</a></li>
+<li class="chapter" data-level="1.1.5" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#rstudio"><i class="fa fa-check"></i><b>1.1.5</b> RStudio</a></li>
+<li class="chapter" data-level="1.1.6" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#jupiter"><i class="fa fa-check"></i><b>1.1.6</b> Jupiter</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#r"><i class="fa fa-check"></i><b>1.2</b> R</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#installing-r"><i class="fa fa-check"></i><b>1.2.1</b> Installing R</a></li>
+<li class="chapter" data-level="1.2.2" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#rstudio-1"><i class="fa fa-check"></i><b>1.2.2</b> RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="objects.html"><a href="objects.html"><i class="fa fa-check"></i><b>2</b> Objects</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="objects.html"><a href="objects.html#python-1"><i class="fa fa-check"></i><b>2.1</b> Python</a></li>
+<li class="chapter" data-level="2.2" data-path="objects.html"><a href="objects.html#r-1"><i class="fa fa-check"></i><b>2.2</b> R</a></li>
+<li class="chapter" data-level="2.3" data-path="objects.html"><a href="objects.html#excercises"><i class="fa fa-check"></i><b>2.3</b> Excercises</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="basic-syntax.html"><a href="basic-syntax.html"><i class="fa fa-check"></i><b>3</b> Basic syntax</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="basic-syntax.html"><a href="basic-syntax.html#python-2"><i class="fa fa-check"></i><b>3.1</b> Python</a></li>
+<li class="chapter" data-level="3.2" data-path="basic-syntax.html"><a href="basic-syntax.html#r-2"><i class="fa fa-check"></i><b>3.2</b> R</a></li>
+<li class="chapter" data-level="3.3" data-path="basic-syntax.html"><a href="basic-syntax.html#excercises-1"><i class="fa fa-check"></i><b>3.3</b> Excercises</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quick R/Python Beginner Guide for Ecologists</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="getting-started-what-is-ide" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Getting started (what is IDE?)<a href="getting-started-what-is-ide.html#getting-started-what-is-ide" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>You can use any programming language in a command line (on Windows, call <code>Win+R</code>, write “cmd” and hit Enter, on Mac – open app called “Terminal”, on Linux – hit <code>Ctrl+Alt+T</code>). The command line is the most primitive way to interact with your computer through short statements: you can create or delete new directories, files, list folder contents, and much-much more. Although you theoretically can write long and complex commands, your machine will only interpret a single line at a time. So doing anything but simple tasks using a command line is not very convenient.</p>
+<p>With any programming language, you might want to have your program contained in a script. This way, instead of typing a set of commands in the command line, you can edit and save the entire script and run it as a file.</p>
+<p>The most convenient way to deal with scripts is using an IDE – integrated development environment. IDE is just another computer program that allows you to open, edit, save, and run scripts in your programming language of choice. Ideally, an IDE should work with any language (although for many of them there is also a compiling step in running a code), but surely enough some are more popular than the others.</p>
+<div id="python" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Python<a href="getting-started-what-is-ide.html#python" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="installing-python" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Installing Python<a href="getting-started-what-is-ide.html#installing-python" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To use a language, you need to install that language on your machine. You will need to do some digging to install a language, and for Python, here is a good starting point: <a href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>.</p>
+<p>Ubuntu users can easily type in Terminal:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="getting-started-what-is-ide.html#cb1-1" tabindex="-1"></a><span class="fu">sudo</span> apt-get update</span>
+<span id="cb1-2"><a href="getting-started-what-is-ide.html#cb1-2" tabindex="-1"></a><span class="fu">sudo</span> apt-get install python3</span></code></pre></div>
+</div>
+<div id="visual-studio-code" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Visual Studio Code<a href="getting-started-what-is-ide.html#visual-studio-code" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Visual Studio Code is one of the IDEs that is supposed to be used for any language. I don’t use it often though. You can download it here: <a href="https://code.visualstudio.com/download">https://code.visualstudio.com/download</a>.</p>
+</div>
+<div id="pycharm" class="section level3 hasAnchor" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> PyCharm<a href="getting-started-what-is-ide.html#pycharm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>PyCharm is pretty simple and lies somewhere between a text editor and a sophisticated IDE. It can be pretty useful to edit an existing code, but might be not enough to write a sophisticated script from scratch. You can download it here: <a href="https://www.jetbrains.com/pycharm/download/">https://www.jetbrains.com/pycharm/download/</a>.</p>
+</div>
+<div id="spyder" class="section level3 hasAnchor" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> Spyder<a href="getting-started-what-is-ide.html#spyder" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Spyder is probably one of the most complex IDEs, which will be especially intuitive for the past R/RStudio users. However, if you decide to use it, you might need to be at the level of experience where you know what <code>pip</code> or <code>anaconda</code> is, and dealing with those can be extremely annoying. Here is the download link: <a href="https://docs.spyder-ide.org/current/installation.html">https://docs.spyder-ide.org/current/installation.html</a>.</p>
+</div>
+<div id="rstudio" class="section level3 hasAnchor" number="1.1.5">
+<h3><span class="header-section-number">1.1.5</span> RStudio<a href="getting-started-what-is-ide.html#rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Yes, that’s right, RStudio for Python. The current philosophy of RStudio developers is to create a cross-platform IDE (that’s why they are renaming RStudio to Posit). We will get to RStudio later.</p>
+</div>
+<div id="jupiter" class="section level3 hasAnchor" number="1.1.6">
+<h3><span class="header-section-number">1.1.6</span> Jupiter<a href="getting-started-what-is-ide.html#jupiter" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Jupiter notebooks are pretty common nowadays because they allow you to write a whole interactive document (e.g., report, paper). This means that instead of a dry Python code, you write a real document, like a notebook, where you can embed chunks of code that will run and do something. A Jupiter notebook is something like what this guide looks like – mostly I write text, but hey, there are boxes of code that you can copy and run.</p>
+<p>A Jupiter notebook could be a good starting point for somebody who is learning Python. For example, if you don’t want to install Python locally on your computer, you can use a cloud-based <a href="https://colab.research.google.com/">Colab</a>. The disadvantage is that all your code will be run somewhere on Google servers, so there might be a delay; besides, you need a stable Internet connection.</p>
+</div>
+</div>
+<div id="r" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> R<a href="getting-started-what-is-ide.html#r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="installing-r" class="section level3 hasAnchor" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Installing R<a href="getting-started-what-is-ide.html#installing-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To install R, just follow the instructions: <a href="https://cran.r-project.org/">https://cran.r-project.org/</a>.</p>
+</div>
+<div id="rstudio-1" class="section level3 hasAnchor" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> RStudio<a href="getting-started-what-is-ide.html#rstudio-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are other IDEs for R, but RStudio is the most prevalent one. You can download it here: <a href="https://posit.co/download/rstudio-desktop/">https://posit.co/download/rstudio-desktop/</a>.</p>
+<p>Note: RStudio and R are two different things. In your CV, you might want to say that you know R (the language), but don’t say that you know RStudio (the tool) – that serves as a red flag that you don’t really know what you are talking about. Saying “I have skills with RStudio” is like saying “I can use a keyboard” instead of “I am proficient in English”.</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="objects.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

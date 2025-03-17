@@ -1,0 +1,85 @@
+---
+title: "Quick R/Python Beginner Guide for Ecologists"
+author: "Oleksii Dubovyk"
+site: bookdown::bookdown_site
+output:
+  html_document:
+    code_folding: hide
+mainfont: Tempora
+fontsize: 11pt
+---
+
+# About{-}
+
+This is a quick guide to the basics of programming with R and Python. Treat it is a cheatsheet. Maybe I will get enough time to extend it into a proper guide.
+
+# Getting started (what is IDE?)
+
+You can use any programming language in a command line (on Windows, call `Win+R`, write "cmd" and hit Enter, on Mac -- open app called "Terminal", on Linux -- hit `Ctrl+Alt+T`). The command line is the most primitive way to interact with your computer through short statements: you can create or delete new directories, files, list folder contents, and much-much more. Although you theoretically can write long and complex commands, your machine will only interpret a single line at a time. So doing anything but simple tasks using a command line is not very convenient.
+
+With any programming language, you might want to have your program contained in a script. This way, instead of typing a set of commands in the command line, you can edit and save the entire script and run it as a file.
+
+The most convenient way to deal with scripts is using an IDE -- integrated development environment. IDE is just another computer program that allows you to open, edit, save, and run scripts in your programming language of choice. Ideally, an IDE should work with any language (although for many of them there is also a compiling step in running a code), but surely enough some are more popular than the others.
+
+## Python
+
+### Installing Python
+
+To use a language, you need to install that language on your machine. You will need to do some digging to install a language, and for Python, here is a good starting point: [https://www.python.org/downloads/](https://www.python.org/downloads/).
+
+Ubuntu users can easily type in Terminal:
+
+```{bash eval=FALSE}
+sudo apt-get update
+sudo apt-get install python3
+```
+
+### Visual Studio Code
+
+Visual Studio Code is one of the IDEs that is supposed to be used for any language. I don't use it often though. You can download it here: [https://code.visualstudio.com/download](https://code.visualstudio.com/download).
+
+### PyCharm
+
+PyCharm is pretty simple and lies somewhere between a text editor and a sophisticated IDE. It can be pretty useful to edit an existing code, but might be not enough to write a sophisticated script from scratch. You can download it here: [https://www.jetbrains.com/pycharm/download/](https://www.jetbrains.com/pycharm/download/).
+
+### Spyder
+
+Spyder is probably one of the most complex IDEs, which will be especially intuitive for the past R/RStudio users. However, if you decide to use it, you might need to be at the level of experience where you know what `pip` or `anaconda` is, and dealing with those can be extremely annoying. Here is the download link: [https://docs.spyder-ide.org/current/installation.html](https://docs.spyder-ide.org/current/installation.html).
+
+### RStudio
+
+Yes, that's right, RStudio for Python. The current philosophy of RStudio developers is to create a cross-platform IDE (that's why they are renaming RStudio to Posit). We will get to RStudio later.
+
+### Jupiter
+
+Jupiter notebooks are pretty common nowadays because they allow you to write a whole interactive document (e.g., report, paper). This means that instead of a dry Python code, you write a real document, like a notebook, where you can embed chunks of code that will run and do something. A Jupiter notebook is something like what this guide looks like -- mostly I write text, but hey, there are boxes of code that you can copy and run.
+
+A Jupiter notebook could be a good starting point for somebody who is learning Python. For example, if you don't want to install Python locally on your computer, you can use a cloud-based [Colab](https://colab.research.google.com/). The disadvantage is that all your code will be run somewhere on Google servers, so there might be a delay; besides, you need a stable Internet connection.
+
+## R
+
+### Installing R
+
+To install R, just follow the instructions: [https://cran.r-project.org/](https://cran.r-project.org/).
+
+### RStudio
+
+There are other IDEs for R, but RStudio is the most prevalent one. You can download it here: [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/).
+
+Note: RStudio and R are two different things. In your CV, you might want to say that you know R (the language), but don't say that you know RStudio (the tool) -- that serves as a red flag that you don't really know what you are talking about. Saying "I have skills with RStudio" is like saying "I can use a keyboard" instead of "I am proficient in English".
+
+# Objects
+
+## Python
+
+## R
+
+## Excercises
+
+# Basic syntax
+
+## Python
+
+## R
+
+## Excercises
