@@ -39,6 +39,46 @@
 \makeatother
 \usepackage{xcolor}
 \usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -92,19 +132,81 @@
 \setcounter{tocdepth}{2}
 \tableofcontents
 }
-\#Objects
+\section*{About}\label{about}
+\addcontentsline{toc}{section}{About}
+
+This is a quick guide to the basics of programming with R and Python. Treat it is a cheatsheet. Maybe I will get enough time to extend it into a proper guide.
+
+\section{Getting started (what is IDE?)}\label{getting-started-what-is-ide}
+
+You can use any programming language in a command line (on Windows, call \texttt{Win+R}, write ``cmd'' and hit Enter, on Mac -- open app called ``Terminal'', on Linux -- hit \texttt{Ctrl+Alt+T}). The command line is the most primitive way to interact with your computer through short statements: you can create or delete new directories, files, list folder contents, and much-much more. Although you theoretically can write long and complex commands, your machine will only interpret a single line at a time. So doing anything but simple tasks using a command line is not very convenient.
+
+With any programming language, you might want to have your program contained in a script. This way, instead of typing a set of commands in the command line, you can edit and save the entire script and run it as a file.
+
+The most convenient way to deal with scripts is using an IDE -- integrated development environment. IDE is just another computer program that allows you to open, edit, save, and run scripts in your programming language of choice. Ideally, an IDE should work with any language (although for many of them there is also a compiling step in running a code), but surely enough some are more popular than the others.
 
 \subsection{Python}\label{python}
 
+\subsubsection{Installing Python}\label{installing-python}
+
+To use a language, you need to install that language on your machine. You will need to do some digging to install a language, and for Python, here is a good starting point: \url{https://www.python.org/downloads/}.
+
+Ubuntu users can easily type in Terminal:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sudo}\NormalTok{ apt{-}get update}
+\FunctionTok{sudo}\NormalTok{ apt{-}get install python3}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Visual Studio Code}\label{visual-studio-code}
+
+Visual Studio Code is one of the IDEs that is supposed to be used for any language. I don't use it often though. You can download it here: \url{https://code.visualstudio.com/download}.
+
+\subsubsection{PyCharm}\label{pycharm}
+
+PyCharm is pretty simple and lies somewhere between a text editor and a sophisticated IDE. It can be pretty useful to edit an existing code, but might be not enough to write a sophisticated script from scratch. You can download it here: \url{https://www.jetbrains.com/pycharm/download/}.
+
+\subsubsection{Spyder}\label{spyder}
+
+Spyder is probably one of the most complex IDEs, which will be especially intuitive for the past R/RStudio users. However, if you decide to use it, you might need to be at the level of experience where you know what \texttt{pip} or \texttt{anaconda} is, and dealing with those can be extremely annoying. Here is the download link: \url{https://docs.spyder-ide.org/current/installation.html}.
+
+\subsubsection{RStudio}\label{rstudio}
+
+Yes, that's right, RStudio for Python. The current philosophy of RStudio developers is to create a cross-platform IDE (that's why they are renaming RStudio to Posit). We will get to RStudio later.
+
+\subsubsection{Jupiter}\label{jupiter}
+
+Jupiter notebooks are pretty common nowadays because they allow you to write a whole interactive document (e.g., report, paper). This means that instead of a dry Python code, you write a real document, like a notebook, where you can embed chunks of code that will run and do something. A Jupiter notebook is something like what this guide looks like -- mostly I write text, but hey, there are boxes of code that you can copy and run.
+
+A Jupiter notebook could be a good starting point for somebody who is learning Python. For example, if you don't want to install Python locally on your computer, you can use a cloud-based \href{https://colab.research.google.com/}{Colab}. The disadvantage is that all your code will be run somewhere on Google servers, so there might be a delay; besides, you need a stable Internet connection.
+
 \subsection{R}\label{r}
+
+\subsubsection{Installing R}\label{installing-r}
+
+To install R, just follow the instructions: \url{https://cran.r-project.org/}.
+
+\subsubsection{RStudio}\label{rstudio-1}
+
+There are other IDEs for R, but RStudio is the most prevalent one. You can download it here: \url{https://posit.co/download/rstudio-desktop/}.
+
+Note: RStudio and R are two different things. In your CV, you might want to say that you know R (the language), but don't say that you know RStudio (the tool) -- that serves as a red flag that you don't really know what you are talking about. Saying ``I have skills with RStudio'' is like saying ``I can use a keyboard'' instead of ``I am proficient in English''.
+
+\section{Objects}\label{objects}
+
+\subsection{Python}\label{python-1}
+
+\subsection{R}\label{r-1}
 
 \subsection{Excercises}\label{excercises}
 
 \section{Basic syntax}\label{basic-syntax}
 
-\subsection{Python}\label{python-1}
+\subsection{Python}\label{python-2}
 
-\subsection{R}\label{r-1}
+\subsection{R}\label{r-2}
 
 \subsection{Excercises}\label{excercises-1}
 
