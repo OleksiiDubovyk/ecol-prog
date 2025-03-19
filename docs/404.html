@@ -157,17 +157,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.2" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#rstudio-1"><i class="fa fa-check"></i><b>1.2.2</b> RStudio</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="objects.html"><a href="objects.html"><i class="fa fa-check"></i><b>2</b> Objects</a>
+<li class="chapter" data-level="2" data-path="objects-and-data-types.html"><a href="objects-and-data-types.html"><i class="fa fa-check"></i><b>2</b> Objects and data types</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="objects.html"><a href="objects.html#python-1"><i class="fa fa-check"></i><b>2.1</b> Python</a></li>
-<li class="chapter" data-level="2.2" data-path="objects.html"><a href="objects.html#r-1"><i class="fa fa-check"></i><b>2.2</b> R</a></li>
-<li class="chapter" data-level="2.3" data-path="objects.html"><a href="objects.html#excercises"><i class="fa fa-check"></i><b>2.3</b> Excercises</a></li>
+<li class="chapter" data-level="2.1" data-path="objects-and-data-types.html"><a href="objects-and-data-types.html#python-1"><i class="fa fa-check"></i><b>2.1</b> Python</a></li>
+<li class="chapter" data-level="2.2" data-path="objects-and-data-types.html"><a href="objects-and-data-types.html#r-1"><i class="fa fa-check"></i><b>2.2</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="basic-syntax.html"><a href="basic-syntax.html"><i class="fa fa-check"></i><b>3</b> Basic syntax</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="basic-syntax.html"><a href="basic-syntax.html#python-2"><i class="fa fa-check"></i><b>3.1</b> Python</a></li>
+<li class="chapter" data-level="3.1" data-path="basic-syntax.html"><a href="basic-syntax.html#python-2"><i class="fa fa-check"></i><b>3.1</b> Python</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="basic-syntax.html"><a href="basic-syntax.html#create-and-play-with-variables"><i class="fa fa-check"></i><b>3.1.1</b> Create and play with variables</a></li>
+<li class="chapter" data-level="3.1.2" data-path="basic-syntax.html"><a href="basic-syntax.html#comments"><i class="fa fa-check"></i><b>3.1.2</b> Comments</a></li>
+<li class="chapter" data-level="3.1.3" data-path="basic-syntax.html"><a href="basic-syntax.html#loops"><i class="fa fa-check"></i><b>3.1.3</b> Loops</a></li>
+<li class="chapter" data-level="3.1.4" data-path="basic-syntax.html"><a href="basic-syntax.html#ifelse"><i class="fa fa-check"></i><b>3.1.4</b> If/else</a></li>
+<li class="chapter" data-level="3.1.5" data-path="basic-syntax.html"><a href="basic-syntax.html#functions"><i class="fa fa-check"></i><b>3.1.5</b> Functions</a></li>
+</ul></li>
 <li class="chapter" data-level="3.2" data-path="basic-syntax.html"><a href="basic-syntax.html#r-2"><i class="fa fa-check"></i><b>3.2</b> R</a></li>
-<li class="chapter" data-level="3.3" data-path="basic-syntax.html"><a href="basic-syntax.html#excercises-1"><i class="fa fa-check"></i><b>3.3</b> Excercises</a></li>
+<li class="chapter" data-level="3.3" data-path="basic-syntax.html"><a href="basic-syntax.html#excercises"><i class="fa fa-check"></i><b>3.3</b> Excercises</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -249,12 +255,26 @@ gitbook.start({
 "options": null
 },
 "toc": {
-"collapse": "subsection"
+"collapse": "section"
 }
 });
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

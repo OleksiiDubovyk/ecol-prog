@@ -29,7 +29,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="objects.html"/>
+<link rel="prev" href="objects-and-data-types.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -157,17 +157,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.2.2" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#rstudio-1"><i class="fa fa-check"></i><b>1.2.2</b> RStudio</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="objects.html"><a href="objects.html"><i class="fa fa-check"></i><b>2</b> Objects</a>
+<li class="chapter" data-level="2" data-path="objects-and-data-types.html"><a href="objects-and-data-types.html"><i class="fa fa-check"></i><b>2</b> Objects and data types</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="objects.html"><a href="objects.html#python-1"><i class="fa fa-check"></i><b>2.1</b> Python</a></li>
-<li class="chapter" data-level="2.2" data-path="objects.html"><a href="objects.html#r-1"><i class="fa fa-check"></i><b>2.2</b> R</a></li>
-<li class="chapter" data-level="2.3" data-path="objects.html"><a href="objects.html#excercises"><i class="fa fa-check"></i><b>2.3</b> Excercises</a></li>
+<li class="chapter" data-level="2.1" data-path="objects-and-data-types.html"><a href="objects-and-data-types.html#python-1"><i class="fa fa-check"></i><b>2.1</b> Python</a></li>
+<li class="chapter" data-level="2.2" data-path="objects-and-data-types.html"><a href="objects-and-data-types.html#r-1"><i class="fa fa-check"></i><b>2.2</b> R</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="basic-syntax.html"><a href="basic-syntax.html"><i class="fa fa-check"></i><b>3</b> Basic syntax</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="basic-syntax.html"><a href="basic-syntax.html#python-2"><i class="fa fa-check"></i><b>3.1</b> Python</a></li>
+<li class="chapter" data-level="3.1" data-path="basic-syntax.html"><a href="basic-syntax.html#python-2"><i class="fa fa-check"></i><b>3.1</b> Python</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="basic-syntax.html"><a href="basic-syntax.html#create-and-play-with-variables"><i class="fa fa-check"></i><b>3.1.1</b> Create and play with variables</a></li>
+<li class="chapter" data-level="3.1.2" data-path="basic-syntax.html"><a href="basic-syntax.html#comments"><i class="fa fa-check"></i><b>3.1.2</b> Comments</a></li>
+<li class="chapter" data-level="3.1.3" data-path="basic-syntax.html"><a href="basic-syntax.html#loops"><i class="fa fa-check"></i><b>3.1.3</b> Loops</a></li>
+<li class="chapter" data-level="3.1.4" data-path="basic-syntax.html"><a href="basic-syntax.html#ifelse"><i class="fa fa-check"></i><b>3.1.4</b> If/else</a></li>
+<li class="chapter" data-level="3.1.5" data-path="basic-syntax.html"><a href="basic-syntax.html#functions"><i class="fa fa-check"></i><b>3.1.5</b> Functions</a></li>
+</ul></li>
 <li class="chapter" data-level="3.2" data-path="basic-syntax.html"><a href="basic-syntax.html#r-2"><i class="fa fa-check"></i><b>3.2</b> R</a></li>
-<li class="chapter" data-level="3.3" data-path="basic-syntax.html"><a href="basic-syntax.html#excercises-1"><i class="fa fa-check"></i><b>3.3</b> Excercises</a></li>
+<li class="chapter" data-level="3.3" data-path="basic-syntax.html"><a href="basic-syntax.html#excercises"><i class="fa fa-check"></i><b>3.3</b> Excercises</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -193,12 +199,176 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 3</span> Basic syntax<a href="basic-syntax.html#basic-syntax" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="python-2" class="section level2 hasAnchor" number="3.1">
 <h2><span class="header-section-number">3.1</span> Python<a href="basic-syntax.html#python-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="create-and-play-with-variables" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Create and play with variables<a href="basic-syntax.html#create-and-play-with-variables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Say, you want to create add two numbers. Sure, you definitely can do that:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="basic-syntax.html#cb2-1" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span></span></code></pre></div>
+<pre><code>## 5</code></pre>
+<p>This all is not too useful though. We are not using the perks of objects, and the statement above is not much better than having a calculator. Let’s create two objects and assign integers to them.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="basic-syntax.html#cb4-1" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb4-2"><a href="basic-syntax.html#cb4-2" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb4-3"><a href="basic-syntax.html#cb4-3" tabindex="-1"></a>c <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="cb4-4"><a href="basic-syntax.html#cb4-4" tabindex="-1"></a><span class="bu">print</span>(c)</span></code></pre></div>
+<pre><code>## 5</code></pre>
+<p>The function <code>print()</code> here prints out a value of an object. Without that last line, all the operation would have still happened but we would never see the result. Sowe can see that we are operating on these objects. Let’s check what class the object <code>c</code> belong to. The function <code>type()</code> allows us to look up the class of an object:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="basic-syntax.html#cb6-1" tabindex="-1"></a><span class="bu">type</span>(c)</span></code></pre></div>
+<pre><code>## &lt;class &#39;int&#39;&gt;</code></pre>
+<p>There are not that many operations we can do with an integer. Let’s rewrite one of them into a float.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="basic-syntax.html#cb8-1" tabindex="-1"></a>b <span class="op">=</span> <span class="fl">3.5</span></span>
+<span id="cb8-2"><a href="basic-syntax.html#cb8-2" tabindex="-1"></a>c <span class="op">=</span> a <span class="op">+</span> b</span>
+<span id="cb8-3"><a href="basic-syntax.html#cb8-3" tabindex="-1"></a><span class="bu">print</span>(c)</span></code></pre></div>
+<pre><code>## 5.5</code></pre>
+<p>Now we can apply different functions to this object, for example, round it up, which returns an integer.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="basic-syntax.html#cb10-1" tabindex="-1"></a><span class="bu">round</span>(c)</span></code></pre></div>
+<pre><code>## 6</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="basic-syntax.html#cb12-1" tabindex="-1"></a><span class="bu">type</span>(<span class="bu">round</span>(c))</span></code></pre></div>
+<pre><code>## &lt;class &#39;int&#39;&gt;</code></pre>
+<p>You can name your objects with almost any name, except for the reserved ones (e.g., you can’t name an object <code>True</code>, because <code>True</code> is a Boolean value). Let’s see how to create objects of other classes.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb14-1"><a href="basic-syntax.html#cb14-1" tabindex="-1"></a>x1 <span class="op">=</span> <span class="va">False</span></span></code></pre></div>
+<p>Let’s check if <code>x1</code> is False:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="basic-syntax.html#cb15-1" tabindex="-1"></a>x1 <span class="op">==</span> <span class="va">False</span></span></code></pre></div>
+<pre><code>## True</code></pre>
+<p>So it is true that the object <code>x1</code> is <code>False</code>.</p>
+<p>What about strings?</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="basic-syntax.html#cb17-1" tabindex="-1"></a>x2 <span class="op">=</span> <span class="st">&quot;False&quot;</span></span>
+<span id="cb17-2"><a href="basic-syntax.html#cb17-2" tabindex="-1"></a>x2 <span class="op">==</span> <span class="va">False</span></span></code></pre></div>
+<pre><code>## False</code></pre>
+<p>It is not true now, because <code>x2</code> is nothing but a string of characters and not a Boolean variable.</p>
+<p>You can index a string, i.e., access a specific element (character) in a string: just like “H” is the first letter in “Hello”, “e” is the second, and so on. Be aware, however, that indexing in Python starts with zero, so that the first element has an index [0], the second – [1], the third – [2], and so on. You can also index a sequence from the end using a minus sign, so that the last character is indexed as [-1], the second to the last – [-2]. You can also specify a range of indexed values with a colon, so that [0:3] denotes characters from the first to the fourth. Indexing in Python is specified with square brackets:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="basic-syntax.html#cb19-1" tabindex="-1"></a>x2</span></code></pre></div>
+<pre><code>## &#39;False&#39;</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="basic-syntax.html#cb21-1" tabindex="-1"></a>x2[<span class="dv">0</span>]</span></code></pre></div>
+<pre><code>## &#39;F&#39;</code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="basic-syntax.html#cb23-1" tabindex="-1"></a>x2[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## &#39;a&#39;</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="basic-syntax.html#cb25-1" tabindex="-1"></a>x2[<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## &#39;l&#39;</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="basic-syntax.html#cb27-1" tabindex="-1"></a>x2[<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## &#39;e&#39;</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="basic-syntax.html#cb29-1" tabindex="-1"></a>x2[<span class="dv">0</span>:<span class="dv">3</span>]</span></code></pre></div>
+<pre><code>## &#39;Fal&#39;</code></pre>
+<p>In Python, the plus operator applied to strings concatenates them:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="basic-syntax.html#cb31-1" tabindex="-1"></a>x2[<span class="dv">0</span>:<span class="dv">3</span>] <span class="op">+</span> x2[<span class="dv">1</span>] <span class="op">+</span> x2[<span class="dv">0</span>] <span class="op">+</span> x2[<span class="dv">4</span>] <span class="op">+</span> x2[<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## &#39;FalaFel&#39;</code></pre>
+<p>Similar rules apply to lists. You can index lists, e.g.,</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="basic-syntax.html#cb33-1" tabindex="-1"></a>x3 <span class="op">=</span> <span class="bu">list</span>(x2)</span>
+<span id="cb33-2"><a href="basic-syntax.html#cb33-2" tabindex="-1"></a>x3</span></code></pre></div>
+<pre><code>## [&#39;F&#39;, &#39;a&#39;, &#39;l&#39;, &#39;s&#39;, &#39;e&#39;]</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="basic-syntax.html#cb35-1" tabindex="-1"></a>x3[<span class="dv">0</span>:<span class="dv">3</span>]</span></code></pre></div>
+<pre><code>## [&#39;F&#39;, &#39;a&#39;, &#39;l&#39;]</code></pre>
+<p>Lists have a certain number of methods. One of the common ones is appending with another object. Notice how methods in Python are applied to objects with a period, so that you have <code>object.method(argument)</code>.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="basic-syntax.html#cb37-1" tabindex="-1"></a>x4 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="cb37-2"><a href="basic-syntax.html#cb37-2" tabindex="-1"></a>x4</span></code></pre></div>
+<pre><code>## [1, 2, 3, 4]</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="basic-syntax.html#cb39-1" tabindex="-1"></a>x4.append(<span class="dv">5</span>)</span>
+<span id="cb39-2"><a href="basic-syntax.html#cb39-2" tabindex="-1"></a>x4</span></code></pre></div>
+<pre><code>## [1, 2, 3, 4, 5]</code></pre>
+<p>Each class of objects has a specific list of methods that can be applied to such objects. You might need to read python documentation for different classes (e.g., <a href="https://docs.python.org/3/tutorial/datastructures.html">here</a>). You also can save an output of a method into another object:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="basic-syntax.html#cb41-1" tabindex="-1"></a>x4.append(<span class="dv">5</span>)</span>
+<span id="cb41-2"><a href="basic-syntax.html#cb41-2" tabindex="-1"></a>x5 <span class="op">=</span> x4.count(<span class="dv">5</span>)</span>
+<span id="cb41-3"><a href="basic-syntax.html#cb41-3" tabindex="-1"></a>x5</span></code></pre></div>
+<pre><code>## 2</code></pre>
+</div>
+<div id="comments" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Comments<a href="basic-syntax.html#comments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It may be useful to leave some verbal comments in your code that wouldn’t be read and executed by the computer. In Python, hash tag comments out a line of code or everything after it:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="basic-syntax.html#cb43-1" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb43-2"><a href="basic-syntax.html#cb43-2" tabindex="-1"></a>b <span class="ot">=</span> <span class="dv">3</span></span>
+<span id="cb43-3"><a href="basic-syntax.html#cb43-3" tabindex="-1"></a><span class="co"># b = 5000</span></span>
+<span id="cb43-4"><a href="basic-syntax.html#cb43-4" tabindex="-1"></a>a <span class="sc">+</span> b <span class="co"># still 5, so b was never assigned as 5000. just like this text</span></span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+</div>
+<div id="loops" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Loops<a href="basic-syntax.html#loops" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Loops are used for iterations over a sequence, meaning that you go over each element and do something with it. <code>for</code> loops are more common and do something <em>for</em> each element, and <code>while</code> loops conduct iterations as long as some logical condition is satisfied. For example,</p>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="basic-syntax.html#cb45-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> x4:</span>
+<span id="cb45-2"><a href="basic-syntax.html#cb45-2" tabindex="-1"></a>  <span class="bu">print</span>(i)</span></code></pre></div>
+<pre><code>## 1
+## 2
+## 3
+## 4
+## 5
+## 5</code></pre>
+<p>does pretty much the following: for each element of <code>x4</code>, let’s call this element <code>i</code>, and then print this <code>i</code>.</p>
+<p>In the <code>while</code> loop, on the other hand</p>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="basic-syntax.html#cb47-1" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">1</span> <span class="co"># initialize the variable</span></span>
+<span id="cb47-2"><a href="basic-syntax.html#cb47-2" tabindex="-1"></a><span class="co"># you can explicitly define the class, in which case it would be</span></span>
+<span id="cb47-3"><a href="basic-syntax.html#cb47-3" tabindex="-1"></a><span class="co"># number = int(1)</span></span>
+<span id="cb47-4"><a href="basic-syntax.html#cb47-4" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="basic-syntax.html#cb47-5" tabindex="-1"></a><span class="cf">while</span> number <span class="op">&lt;</span> <span class="dv">5</span>:</span>
+<span id="cb47-6"><a href="basic-syntax.html#cb47-6" tabindex="-1"></a>  <span class="bu">print</span>(number)</span>
+<span id="cb47-7"><a href="basic-syntax.html#cb47-7" tabindex="-1"></a>  number <span class="op">+=</span> <span class="dv">1</span> <span class="co"># same as &quot;number = number + 1&quot;</span></span></code></pre></div>
+<pre><code>## 1
+## 2
+## 3
+## 4</code></pre>
+<p>which the computer understands as the following: create a variable <code>number</code> and assign it a value of <code>1</code>; then run an iteration, at each step of which print out the value of the <code>number</code> and increase its value by one; this process is repeated as long as the statement <code>number &lt; 5</code> is <code>True</code>; once <code>number</code> becomes <code>5</code>, this0 statement becomes <code>False</code> and the loop stops.</p>
+<p>While loops are a bit tricky because you can accidentally end up with an infinite loop. For example,</p>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="basic-syntax.html#cb49-1" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb49-2"><a href="basic-syntax.html#cb49-2" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;AAAAAA&quot;</span>)</span></code></pre></div>
+<p>If you run it, your computer will never stop yelling at you because <code>True</code> is always <code>True</code>, and the while loop execute every next iteration.</p>
+</div>
+<div id="ifelse" class="section level3 hasAnchor" number="3.1.4">
+<h3><span class="header-section-number">3.1.4</span> If/else<a href="basic-syntax.html#ifelse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>What if you run a loop and want different outcomes under different conditions? That’s where you would use an <code>if</code>/<code>else</code> statement. For example, you for your sequence you can check if a number is odd or even:</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="basic-syntax.html#cb50-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> x4:</span>
+<span id="cb50-2"><a href="basic-syntax.html#cb50-2" tabindex="-1"></a>  <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb50-3"><a href="basic-syntax.html#cb50-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is even&quot;</span>)<span class="op">;</span></span>
+<span id="cb50-4"><a href="basic-syntax.html#cb50-4" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb50-5"><a href="basic-syntax.html#cb50-5" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is odd&quot;</span>)</span></code></pre></div>
+<pre><code>## 1 is odd
+## 2 is even
+## 3 is odd
+## 4 is even
+## 5 is odd
+## 5 is odd</code></pre>
+<p>Here, we apply a modulo operator <code>%</code> to our value <code>i</code> to check the reminder of dividing <code>i/2</code> equals zero; if <code>True</code>, then <code>i</code> is even, else it is odd.</p>
+<p>There could be more complex logical operations. What is the sequence represents something that we want to classify into three levels: low (0–1), medium (2–4), or high (5 and higher):</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="basic-syntax.html#cb52-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> x4:</span>
+<span id="cb52-2"><a href="basic-syntax.html#cb52-2" tabindex="-1"></a>  <span class="cf">if</span> i <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
+<span id="cb52-3"><a href="basic-syntax.html#cb52-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is low&quot;</span>)<span class="op">;</span></span>
+<span id="cb52-4"><a href="basic-syntax.html#cb52-4" tabindex="-1"></a>  <span class="cf">elif</span> i <span class="op">&gt;</span> <span class="dv">1</span> <span class="kw">and</span> i <span class="op">&lt;=</span> <span class="dv">4</span>:</span>
+<span id="cb52-5"><a href="basic-syntax.html#cb52-5" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is medium&quot;</span>)<span class="op">;</span></span>
+<span id="cb52-6"><a href="basic-syntax.html#cb52-6" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb52-7"><a href="basic-syntax.html#cb52-7" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is high&quot;</span>)<span class="op">;</span></span></code></pre></div>
+<pre><code>## 1 is low
+## 2 is medium
+## 3 is medium
+## 4 is medium
+## 5 is high
+## 5 is high</code></pre>
+<p>where <code>elif</code> stands for a short “else if”.</p>
+</div>
+<div id="functions" class="section level3 hasAnchor" number="3.1.5">
+<h3><span class="header-section-number">3.1.5</span> Functions<a href="basic-syntax.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Just like in math, a function is something that receives some input, or argument, and returns some input. For example, we want to write a function <span class="math inline">\(f(x) = x^2\)</span>:</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="basic-syntax.html#cb54-1" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb54-2"><a href="basic-syntax.html#cb54-2" tabindex="-1"></a>  <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span></span></code></pre></div>
+<p><code>def</code> means “define a function”, which the computer will memorize as <code>f</code>, it has an argument <code>x</code>, and the function exponentiates the argument to the power of 2. You can write an output of a function into a different variable.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="basic-syntax.html#cb55-1" tabindex="-1"></a>y <span class="op">=</span> f(<span class="dv">2</span>)</span>
+<span id="cb55-2"><a href="basic-syntax.html#cb55-2" tabindex="-1"></a>y</span></code></pre></div>
+<pre><code>## 4</code></pre>
+<p>You can apply functions in a loop, e.g.,</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="basic-syntax.html#cb57-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> x4:</span>
+<span id="cb57-2"><a href="basic-syntax.html#cb57-2" tabindex="-1"></a>  <span class="bu">print</span>(f(i))</span></code></pre></div>
+<pre><code>## 1
+## 4
+## 9
+## 16
+## 25
+## 25</code></pre>
+<p>A function can have several arguments. For example, what if we want to use power different from 2?</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="basic-syntax.html#cb59-1" tabindex="-1"></a><span class="kw">def</span> exp(x, e <span class="op">=</span> <span class="dv">2</span>):</span>
+<span id="cb59-2"><a href="basic-syntax.html#cb59-2" tabindex="-1"></a>  <span class="cf">return</span> x<span class="op">**</span>e</span></code></pre></div>
+<p>In that function, we defined a default option for argument <code>e</code>. Now, if the function doesn’t receive the value of this argument, it will always assume that <code>e = 2</code>.</p>
+<p>It is a good idea to define the arguments, but otherwise Python will read them in the order they were written in the function. So that the code <code>exp(2, 5)</code> will generate the same output as <code>exp(x = 2, e = 5)</code>.</p>
+</div>
 </div>
 <div id="r-2" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> R<a href="basic-syntax.html#r-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="excercises-1" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Excercises<a href="basic-syntax.html#excercises-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="excercises" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Excercises<a href="basic-syntax.html#excercises" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
@@ -207,7 +377,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="objects.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="objects-and-data-types.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>
@@ -256,12 +426,26 @@ gitbook.start({
 "options": null
 },
 "toc": {
-"collapse": "subsection"
+"collapse": "section"
 }
 });
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

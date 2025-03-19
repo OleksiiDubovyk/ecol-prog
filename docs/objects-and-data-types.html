@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Quick R/Python Beginner Guide for Ecologists</title>
-  <meta name="description" content="Quick R/Python Beginner Guide for Ecologists" />
+  <title>Chapter 2 Objects and data types | Quick R/Python Beginner Guide for Ecologists</title>
+  <meta name="description" content="Chapter 2 Objects and data types | Quick R/Python Beginner Guide for Ecologists" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Quick R/Python Beginner Guide for Ecologists" />
+  <meta property="og:title" content="Chapter 2 Objects and data types | Quick R/Python Beginner Guide for Ecologists" />
   <meta property="og:type" content="book" />
   
   
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Quick R/Python Beginner Guide for Ecologists" />
+  <meta name="twitter:title" content="Chapter 2 Objects and data types | Quick R/Python Beginner Guide for Ecologists" />
   
   
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="getting-started-what-is-ide.html"/>
+<link rel="prev" href="getting-started-what-is-ide.html"/>
+<link rel="next" href="basic-syntax.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -195,21 +195,55 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Quick R/Python Beginner Guide for Ecologists</h1>
-<p class="author"><em>Oleksii Dubovyk</em></p>
+<div id="objects-and-data-types" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> Objects and data types<a href="objects-and-data-types.html#objects-and-data-types" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Both Python and R are object-oriented high-level languages. The term “high-level” means that the programming language is written in some lower-level programming languages (e.g., C++), and thus are made to be more understandable by a human programmer (e.g., you don’t need to think about how much RAM you need to allocate to create and interact with an object – the language does it for you behind the scenes).</p>
+<p>The term “object-oriented” means that the definition of objects is central in this programming. An object is any piece of data: from a single value to entire complex datasets. In object-oriented programming, objects are often assigned to certain classes of objects. Each object from a class have certain attribute and methods that can be applied to it.</p>
+<p>For example, I have a succulent plant. I call it Steve. If it was an object in my computer, we could define the following:</p>
+<ul>
+<li><p>class: plant</p></li>
+<li><p>object: Steve</p></li>
+<li><p>attributes: age, number of leaves, biomass, etc.</p></li>
+<li><p>methods: water, plant in a larger pot, add nutrients.</p></li>
+</ul>
+<p>Python and R have slightly different approaches to operating objects, but the logic is pretty similar. But before we get there, let’s talk about the simplest types of data that can be stored in an object.</p>
+<div id="python-1" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Python<a href="objects-and-data-types.html#python-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Boolean: the simplest logical data type, a single value out of two possible values; a flip of a coin would be a good example, and the possible values can be viewed as “heads” or “tails”, “yes” or “no”, “1” or “0”, “True” or “False”; in Python, the Boolean values are denoted as <code>True</code> or <code>False</code>;</p></li>
+<li><p>Numeric: this would be a number, and there are actually different types of a number:</p>
+<ul>
+<li><p>Integer: this is any real whole number: <code>1</code>, <code>5000</code>, <code>-10000000</code>, etc.</p></li>
+<li><p>Float: any non-integer number, e.g., <code>1.235</code>,</p></li>
+<li><p>Complex number: you wouldn’t use it unless you are deep into math</p></li>
+</ul></li>
+<li><p>Sequence: any ordered sequence of values</p>
+<ul>
+<li><p>String: a sequence of characters, in Python defined with single or double quotation marks, e.g., <code>'Hello world'</code> or <code>"Hello world"</code>; the length of a string can be any positive integer, from a single character to a whole paragraph of text</p></li>
+<li><p>List: an ordered list of objects of any type denoted with square brackets, e.g., <code>[1, True, 0.25, "apple"]</code>; lists can be modified after they are created; a list element can also be a list, e.g., <code>[[1, True, 0.25, "apple"], "second element here"]</code></p></li>
+<li><p>Tuple: pretty much the same as a list, but cannot be modified (is immutable); a tuple is defined with parentheses, e.g., <code>(1, True, 0.25)</code></p></li>
+</ul></li>
+<li><p>Dictionary: a set of key-value pairs like you would have in a dictionary, e.g., key “one”-value “uno”, defined with curly brackets as <code>{"key 1": "value 1", "key 2": "value 2"}</code></p></li>
+<li><p>Set: an unordered set of unique values defined with a function <code>set()</code></p></li>
+</ul>
 </div>
-<div id="about" class="section level1 unnumbered hasAnchor">
-<h1>About<a href="index.html#about" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This is a quick guide to the basics of programming with R and Python. Treat it is a cheatsheet. Maybe I will get enough time to extend it into a proper guide.</p>
+<div id="r-1" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> R<a href="objects-and-data-types.html#r-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li><p>Logical: same as Boolean in Python, defined as <code>TRUE</code> or <code>FALSE</code> that also can be abbreviated as <code>T</code> or <code>F</code></p></li>
+<li><p>Integer: same as in Python, e.g., <code>1</code></p></li>
+<li><p>Numeric: same as float in Python, e.g., <code>1.1</code></p></li>
+<li><p>Character: same as string in Python, e.g., <code>"Hello world"</code></p></li>
+</ul>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="getting-started-what-is-ide.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="getting-started-what-is-ide.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="basic-syntax.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

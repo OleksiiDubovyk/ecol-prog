@@ -69,17 +69,271 @@ There are other IDEs for R, but RStudio is the most prevalent one. You can downl
 
 Note: RStudio and R are two different things. In your CV, you might want to say that you know R (the language), but don't say that you know RStudio (the tool) -- that serves as a red flag that you don't really know what you are talking about. Saying "I have skills with RStudio" is like saying "I can use a keyboard" instead of "I am proficient in English".
 
-# Objects
+# Objects and data types
+
+Both Python and R are object-oriented high-level languages. The term "high-level" means that the programming language is written in some lower-level programming languages (e.g., C++), and thus are made to be more understandable by a human programmer (e.g., you don't need to think about how much RAM you need to allocate to create and interact with an object -- the language does it for you behind the scenes).
+
+The term "object-oriented" means that the definition of objects is central in this programming. An object is any piece of data: from a single value to entire complex datasets. In object-oriented programming, objects are often assigned to certain classes of objects. Each object from a class have certain attribute and methods that can be applied to it.
+
+For example, I have a succulent plant. I call it Steve. If it was an object in my computer, we could define the following:
+
+- class: plant
+
+- object: Steve
+
+- attributes: age, number of leaves, biomass, etc.
+
+- methods: water, plant in a larger pot, add nutrients.
+
+Python and R have slightly different approaches to operating objects, but the logic is pretty similar. But before we get there, let's talk about the simplest types of data that can be stored in an object.
 
 ## Python
 
+- Boolean: the simplest logical data type, a single value out of two possible values; a flip of a coin would be a good example, and the possible values can be viewed as "heads" or "tails", "yes" or "no", "1" or "0", "True" or "False"; in Python, the Boolean values are denoted as `True` or `False`;
+
+- Numeric: this would be a number, and there are actually different types of a number:
+
+  - Integer: this is any real whole number: `1`, `5000`, `-10000000`, etc.
+  
+  - Float: any non-integer number, e.g., `1.235`,
+  
+  - Complex number: you wouldn't use it unless you are deep into math
+  
+- Sequence: any ordered sequence of values
+
+  - String: a sequence of characters, in Python defined with single or double quotation marks, e.g., `'Hello world'` or `"Hello world"`; the length of a string can be any positive integer, from a single character to a whole paragraph of text
+  
+  - List: an ordered list of objects of any type denoted with square brackets, e.g., `[1, True, 0.25, "apple"]`; lists can be modified after they are created; a list element can also be a list, e.g., `[[1, True, 0.25, "apple"], "second element here"]`
+  
+  - Tuple: pretty much the same as a list, but cannot be modified (is immutable); a tuple is defined with parentheses, e.g., `(1, True, 0.25)`
+  
+- Dictionary: a set of key-value pairs like you would have in a dictionary, e.g., key "one"-value "uno", defined with curly brackets as `{"key 1": "value 1", "key 2": "value 2"}`
+
+- Set: an unordered set of unique values defined with a function `set()`
+
 ## R
 
-## Excercises
+- Logical: same as Boolean in Python, defined as `TRUE` or `FALSE` that also can be abbreviated as `T` or `F`
+
+- Integer: same as in Python, e.g., `1`
+
+- Numeric: same as float in Python, e.g., `1.1`
+
+- Character: same as string in Python, e.g., `"Hello world"`
 
 # Basic syntax
 
 ## Python
+
+### Create and play with variables
+
+Say, you want to create add two numbers. Sure, you definitely can do that:
+
+```{python}
+2 + 3
+```
+
+This all is not too useful though. We are not using the perks of objects, and the statement above is not much better than having a calculator. Let's create two objects and assign integers to them.
+
+```{python}
+a = 2
+b = 3
+c = a + b
+print(c)
+```
+
+The function `print()` here prints out a value of an object. Without that last line, all the operation would have still happened but we would never see the result. Sowe can see that we are operating on these objects. Let's check what class the object `c` belong to. The function `type()` allows us to look up the class of an object:
+
+```{python}
+type(c)
+```
+
+There are not that many operations we can do with an integer. Let's rewrite one of them into a float.
+
+```{python}
+b = 3.5
+c = a + b
+print(c)
+```
+
+Now we can apply different functions to this object, for example, round it up, which returns an integer.
+
+```{python}
+round(c)
+type(round(c))
+```
+
+You can name your objects with almost any name, except for the reserved ones (e.g., you can't name an object `True`, because `True` is a Boolean value). Let's see how to create objects of other classes.
+
+```{python}
+x1 = False
+```
+
+Let's check if `x1` is False:
+
+```{python}
+x1 == False
+```
+
+So it is true that the object `x1` is `False`.
+
+What about strings?
+
+```{python}
+x2 = "False"
+x2 == False
+```
+
+It is not true now, because `x2` is nothing but a string of characters and not a Boolean variable.
+
+You can index a string, i.e., access a specific element (character) in a string: just like "H" is the first letter in "Hello", "e" is the second, and so on. Be aware, however, that indexing in Python starts with zero, so that the first element has an index [0], the second -- [1], the third -- [2], and so on. You can also index a sequence from the end using a minus sign, so that the last character is indexed as [-1], the second to the last -- [-2]. You can also specify a range of indexed values with a colon, so that [0:3] denotes characters from the first to the fourth. Indexing in Python is specified with square brackets:
+
+```{python}
+x2
+x2[0]
+x2[1]
+x2[2]
+x2[-1]
+x2[0:3]
+```
+
+In Python, the plus operator applied to strings concatenates them:
+
+```{python}
+x2[0:3] + x2[1] + x2[0] + x2[4] + x2[2]
+```
+
+Similar rules apply to lists. You can index lists, e.g.,
+
+```{python}
+x3 = list(x2)
+x3
+x3[0:3]
+```
+
+Lists have a certain number of methods. One of the common ones is appending with another object. Notice how methods in Python are applied to objects with a period, so that you have `object.method(argument)`.
+
+```{python}
+x4 = [1, 2, 3, 4]
+x4
+x4.append(5)
+x4
+```
+
+Each class of objects has a specific list of methods that can be applied to such objects. You might need to read python documentation for different classes (e.g., [here](https://docs.python.org/3/tutorial/datastructures.html)). You also can save an output of a method into another object:
+
+```{python}
+x4.append(5)
+x5 = x4.count(5)
+x5
+```
+
+### Comments
+
+It may be useful to leave some verbal comments in your code that wouldn't be read and executed by the computer. In Python, hash tag comments out a line of code or everything after it:
+
+```{r}
+a = 2
+b = 3
+# b = 5000
+a + b # still 5, so b was never assigned as 5000. just like this text
+```
+
+### Loops
+
+Loops are used for iterations over a sequence, meaning that you go over each element and do something with it. `for` loops are more common and do something *for* each element, and `while` loops conduct iterations as long as some logical condition is satisfied. For example,
+
+```{python}
+for i in x4:
+  print(i)
+```
+
+does pretty much the following: for each element of `x4`, let's call this element `i`, and then print this `i`.
+
+In the `while` loop, on the other hand
+
+```{python}
+number = 1 # initialize the variable
+# you can explicitly define the class, in which case it would be
+# number = int(1)
+
+while number < 5:
+  print(number)
+  number += 1 # same as "number = number + 1"
+```
+
+which the computer understands as the following: create a variable `number` and assign it a value of `1`; then run an iteration, at each step of which print out the value of the `number` and increase its value by one; this process is repeated as long as the statement `number < 5` is `True`; once `number` becomes `5`, this0 statement becomes `False` and the loop stops.
+
+While loops are a bit tricky because you can accidentally end up with an infinite loop. For example,
+
+```{python eval=F}
+while True:
+  print("AAAAAA")
+```
+
+If you run it, your computer will never stop yelling at you because `True` is always `True`, and the while loop execute every next iteration.
+
+### If/else
+
+What if you run a loop and want different outcomes under different conditions? That's where you would use an `if`/`else` statement. For example, you for your sequence you can check if a number is odd or even:
+
+```{python}
+for i in x4:
+  if i % 2 == 0:
+    print(str(i)+" is even");
+  else:
+    print(str(i)+" is odd")
+```
+
+Here, we apply a modulo operator `%` to our value `i` to check the reminder of dividing `i/2` equals zero; if `True`, then `i` is even, else it is odd.
+
+There could be more complex logical operations. What is the sequence represents something that we want to classify into three levels: low (0--1), medium (2--4), or high (5 and higher):
+
+```{python}
+for i in x4:
+  if i <= 1:
+    print(str(i)+" is low");
+  elif i > 1 and i <= 4:
+    print(str(i)+" is medium");
+  else:
+    print(str(i)+" is high");
+```
+
+where `elif` stands for a short "else if".
+
+### Functions
+
+Just like in math, a function is something that receives some input, or argument, and returns some input. For example, we want to write a function $f(x) = x^2$:
+
+```{python}
+def f(x):
+  return x**2
+```
+
+`def` means "define a function", which the computer will memorize as `f`, it has an argument `x`, and the function exponentiates the argument to the power of 2. You can write an output of a function into a different variable.
+
+```{python}
+y = f(2)
+y
+```
+
+You can apply functions in a loop, e.g.,
+
+```{python}
+for i in x4:
+  print(f(i))
+```
+
+A function can have several arguments. For example, what if we want to use power different from 2?
+
+```{python}
+def exp(x, e = 2):
+  return x**e
+```
+
+In that function, we defined a default option for argument `e`. Now, if the function doesn't receive the value of this argument, it will always assume that `e = 2`.
+
+It is a good idea to define the arguments, but otherwise Python will read them in the order they were written in the function. So that the code `exp(2, 5)` will generate the same output as `exp(x = 2, e = 5)`.
 
 ## R
 
