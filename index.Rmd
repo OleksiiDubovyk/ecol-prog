@@ -2,9 +2,7 @@
 title: "Quick R/Python Beginner Guide for Ecologists"
 author: "Oleksii Dubovyk"
 site: bookdown::bookdown_site
-output:
-  html_document:
-    code_folding: hide
+output: bookdown::bs4_book
 mainfont: Tempora
 fontsize: 11pt
 output_dir: "docs"
@@ -115,11 +113,11 @@ Python and R have slightly different approaches to operating objects, but the lo
 
 - Logical: same as Boolean in Python, defined as `TRUE` or `FALSE` that also can be abbreviated as `T` or `F`
 
-- Integer: same as in Python, e.g., `1`
-
-- Numeric: same as float in Python, e.g., `1.1`
+- Numeric: any non-complex number;
 
 - Character: same as string in Python, e.g., `"Hello world"`
+
+Some more complex data structures in R include vectors, data.frames, factors, which will be discussed later.
 
 # Basic syntax
 
@@ -335,6 +333,205 @@ In that function, we defined a default option for argument `e`. Now, if the func
 
 It is a good idea to define the arguments, but otherwise Python will read them in the order they were written in the function. So that the code `exp(2, 5)` will generate the same output as `exp(x = 2, e = 5)`.
 
+Note that loops and Python in general are indent-sensitive: all statements in a loop or function should be indented in a stepwise manner. For example, this code will throw out an error because there is an indent missing:
+
+```{python error=T}
+def exp(x, e = 2):
+return x**e
+```
+
+
+### Libraries
+
+Sometimes you want to do something, but there is no tool for it in the basic syntax and it is too hard to program on your own. Well, chances are, some programmers have already done that, packed their code into an archive somewhere online, and you can easily reuse their functions. Those archives are often called "packages", "libraries", or "modules". To use a module, you need to download and build it on your machine (which usually is done with designated software), and load it into your memory before you use it. This way, you won't need to re-type somebody else's code in your script (because it can be thousands of lines long).
+
+For example, I want to generate a random number. Though it seems simple, there is some math involved and I don't want to waste time tackling this problem. Well there exists a Python module for random number generation called `random``.
+
+Here is the part I don't like too much compared to R: installing a module can be tricky, especially for a beginner. And if for some reason you need several modules that are interdependent, get ready to spend a day solving compatibility issues between them.
+
+Anyway, you might need to [install](https://pip.pypa.io/en/stable/installation/) `pip` on your computer. This little guy, a package manager, is supposed to make it easier to install modules and avoid dependency errors. After installed, you should run pip through the command line like this (erm, it actually won't work because `random` is comes with Python when you install the language, but this is the syntax you could use when installing a new package):
+
+```{bash eval=F}
+pip install random
+```
+
+Now, at the beginning of a script, we need to tell Python the module to load. After that is done, you can call objects from the module like `module.object`:
+
+```{python}
+import random # load the module
+
+random_list = [] # initialize the list
+
+for i in range(10): # 10 iterations
+  x = random.randint(0, 100) # create an intermediate random integer value between 0 and 11
+  random_list.append(x) # append the list
+
+print(random_list)
+```
+
+You can also use aliases in module names and their parts as following:
+
+```{python}
+import random as rand
+
+random_list = []
+
+for i in range(10):
+  x = rand.randint(0, 100)
+  random_list.append(x)
+
+print(random_list)
+```
+
+### Lambda functions
+
+Lambda functions are very simple and short syntax features that are useful for tasks where you don't really need to write a whole function. Once you run a lambda function, it is deleted from your memory. 
+
+```{python}
+def big_function(a, b, add = True):
+  if add:
+    small_function = lambda a, b : a + b
+  else:
+    small_function = lambda a, b : a - b
+  output = small_function(a, b)
+  return output
+```
+
+In this function, we first check if the argument `add` is True (note that `if add` and `if add == True` will produce the same result since if `add = True`, then the statement `add == True` will produce `True`). Depending on it, we create a `small_function` which adds or subtracts the arguments. Then we just apply the `small_function` to the `big_function`'s arguments `a` and `b` without a need to define clumsy `small_function` with `def` and all that stuff.
+
+### List comprehension
+
+List comprehension is an interesting technique that could be used to create sequences that follow a certain pattern without writing a clumsy `for` loop. For example, the statement
+
+```{python}
+doubles1 = [x*2 for x in range(0, 10)]
+```
+
+produces the same output as
+
+```{python}
+doubles2 = []
+
+for x in range(0, 10):
+  doubles2.append(x*2);
+```
+
+Let's compare them:
+
+```{python}
+doubles1
+doubles2
+```
+
+You can also embed `if` statements in comprehended lists, e.g.,
+
+```{python}
+[x**2 for x in range(0, 10) if x>3]
+```
+
+
 ## R
 
-## Excercises
+### Create and play with variables
+
+Python style of assigning values to objects with an equal sign (e.g., `x = 1`) is valid in R. However, it is far more popular (and easier to read) to use an "arrow" operator `<-`, which in RStudio can be done through a shortcut LAlt + - (left Alt and minus sign).
+
+```{r}
+x <- 1
+x
+```
+
+Boolean values are written as `TRUE`/`FALSE` or abbreviated `T`/`F`:
+
+```{r}
+FALSE == F
+```
+
+So it is true that false is false.
+
+Characters and numeric objects are created in the same way,
+
+```{r}
+x1 <- 1.5
+x2 <- "x2"
+```
+
+Sequences of objects are called vectors and are created using a function `c()`
+
+```{r}
+v1 <- c(1, 2, 3, 4, 5)
+v1
+```
+
+You can also create sequences of integers using colon, 
+
+```{r}
+1:10
+```
+
+Or sequences of values using dedicated functions
+
+```{r}
+seq(1, 5, 0.5)
+seq(from = 1, to = 5, length.out = 4)
+```
+
+Note that indexing in R, unlike Python, begins with 1:
+
+```{r}
+v1[1]
+v1[1:3]
+v1[-4]
+```
+
+Vectors can only contain objects of the same class. R will either throw an error or try to change all objects to one class if you try to violate this rule:
+
+```{r}
+c(1, 2, "three")
+```
+
+The simplest combination of vectors is a matrix. It is the same as a matrix in math and you can do linear algebra in basic R.
+
+```{r}
+matrix(data = 1:9, ncol = 3, nrow = 3, byrow = T)
+```
+
+
+Whatever is called lists in R is different from Python. It is more similar to JSON or XML kind of objects, and perhaps closer to Python dictionaries. It can be used to store different types of data with different dimensionality.
+
+```{r}
+l1 <- list("first element" = T,
+           "second element" = c(1, 2, 3, 4),
+           "third element" = matrix(data = 1:9, ncol = 3, nrow = 3))
+l1
+```
+
+Note that R is not an indent-sensitive language and you can hit the next line for better readability. It all gets executed as a single line:
+
+```{r}
+l2 <- list("first element" = T, "second element" = c(1, 2, 3, 4), "third element" = matrix(data = 1:9, ncol = 3, nrow = 3))
+l2
+```
+
+You can index list elements by their index or name, e.g., (note that you have to use double brackets to index list elements)
+
+```{r}
+l1[["first element"]]
+l1[[3]]
+l1[[2]][3]
+```
+
+### Comments
+
+Same as in Python, everything between a `#` sign and the end of the line is commented out and is not executed by R.
+
+### Loops
+
+
+
+### If/else
+
+
+
+### Functions
+

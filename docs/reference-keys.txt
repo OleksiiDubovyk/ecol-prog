@@ -19,5 +19,12 @@ comments
 loops
 ifelse
 functions
+libraries
+lambda-functions
+list-comprehension
 r-2
-excercises
+create-and-play-with-variables-1
+comments-1
+loops-1
+ifelse-1
+functions-1
