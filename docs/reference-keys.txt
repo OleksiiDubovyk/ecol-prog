@@ -15,6 +15,7 @@ r-1
 basic-syntax
 python-2
 create-and-play-with-variables
+operators
 comments
 loops
 ifelse
@@ -24,7 +25,8 @@ lambda-functions
 list-comprehension
 r-2
 create-and-play-with-variables-1
-comments-1
-loops-1
-ifelse-1
+operators-and-comments
+loops-and-ifelse
 functions-1
+apply-and-such
+libraries-1

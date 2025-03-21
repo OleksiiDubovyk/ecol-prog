@@ -226,6 +226,44 @@ x5 = x4.count(5)
 x5
 ```
 
+### Operators
+
+Objects in programming languages are often handled with certain operators. Here are the most common ones:
+
+- Assignment:
+
+  - `=` -- assign
+  
+  - `+=` -- add and assign (`x += 1` is the same as `x = x + 1`)
+  
+- Comparison:
+
+  - `==` -- check if equal (output is either `True` or `False`)
+
+  - `!=` -- check if not equal
+
+  - `>`, `>=`, `<`, `<=` -- check if larger than, larger or equal to, less than, less or equal to
+
+- Arithmetic:
+
+  - `+`, `-`, `*`, `/` -- add, subtract, multiply, divide
+
+  - `**` -- exponentiation
+  
+  - `%` -- modulo (remainder from division)
+
+  - `//` -- floor division (integer of a division)
+
+- Logical:
+
+  - `and`, `or`, `not` -- used in Boolean expressions, e.g., to check if both expressions are satisfied (`and`), or either is satisfied (`or`)
+  
+  - `is`, `is not` -- check whether objects are identical
+  
+- Membership:
+
+  - `in`, `not in` -- checks if an element is a member of some list or other sequence
+
 ### Comments
 
 It may be useful to leave some verbal comments in your code that wouldn't be read and executed by the computer. In Python, hash tag comments out a line of code or everything after it:
@@ -521,17 +559,164 @@ l1[[3]]
 l1[[2]][3]
 ```
 
-### Comments
+### Operators and comments
 
-Same as in Python, everything between a `#` sign and the end of the line is commented out and is not executed by R.
+There are some differences in notation compared to the operators used in Python.
 
-### Loops
+Note that R operators work on vectors. In all fairness, what I said earlier about R object types wasn't exactly correct: all single-element objects are vectors, so it's not like "a vector is a sequence of several (say) numeric objects", but "a single numeric value is just a numeric vector of length 1". So look what happens when a simple arithmetic operator is applied to vectors:
 
+```{r}
+(-2:2) + (1:5)
+```
 
+The operation is repeated for all elements of the vector.
 
-### If/else
+- Assignment:
 
+  - `=` or `<-` -- assign
+  
+  - there is also a right assignment `->` but I have never used it
+  
+- Comparison:
 
+  - `==` -- check if equal (output is either `True` or `False`)
+
+  - `!=` -- check if not equal
+
+  - `>`, `>=`, `<`, `<=` -- check if larger than, larger or equal to, less than, less or equal to
+
+- Arithmetic:
+
+  - `+`, `-`, `*`, `/` -- add, subtract, multiply, divide
+
+  - `^` or `**` -- exponentiation
+  
+  - `%%` -- modulo (remainder from division)
+
+  - `%/%` -- floor division (integer of a division)
+  
+  - `%*%` -- matrix multiplication
+
+- Logical:
+
+  - `&` -- vectorized AND operator
+  
+  - `&&` -- elemental AND operator, should only be used with single-element statements,
+  
+  - `|` and `||` -- vectorized and elemental OR operator, see below what the difference is
+  
+- Membership:
+
+  - `%in%` -- checks if an element is a member of a vector; there is no "not in" operator so I often define it in my scripts: `'%!in%' <- function(x,y)!('%in%'(x,y))`
+  
+- Pipe:
+
+  - `%>%` if you use tidyverse or `|>` in latest R distributions: the idea of pipe to make a statement where you apply a result of one function to another function more readable, so instead of code that reads `function4(function3(function2(function1(x))))` you could write
+  
+```{r eval=F}
+x %>%
+  function1() %>%
+  function2() %>%
+  function3() %>%
+  function4()
+```
+
+Regarding the difference between vectorized and elemental logical operators, vectorized ones always apply to all elements of a vector, e.g.,
+
+```{r}
+((-2:2) >= 0) & ((-2:2) <= 0)
+```
+
+First, it evaluates the statements `((-2:2) >= 0)` (outputs `F F T T T`) and `((-2:2) <= 0)` (outputs `T T T F F`), and then applies the `&` operator to all five pairs, yielding only one that is `T` and `T` in both vectors.
+
+Now, the statement `((-2:2) >= 0) && ((-2:2) <= 0)` will throw an error because `&&` can only be used with two single-element objects. It can be useful when you must be sure that you check single logical values and if a vector creeps in your code, then this code won't run.
+
+As far as the comments, it's same as in Python, everything between a `#` sign and the end of the line is commented out and is not executed by R.
+
+### Loops and if/else
+
+Syntax is fairly similar to Python, but again, indentation is not important in R. Unlike Python, you are expected to separate the statement you iterate over with parentheses, while the iterative statement is contained within curly brackets. 
+
+```{r}
+odds <- numeric() # initialize empty numeric vector
+evens <- numeric()
+
+for (i in 1:10){
+  if (i %% 2 == 0){
+    odds <- c(odds, i) # there is no append command so you have to rewrite the object at each step
+  }else{
+    evens <- c(evens, i)
+  }
+}
+
+odds
+evens
+```
+
+A neat function in R that makes if/else functions easier is `ifelse` (just like in Excel), which lets you fit a whole statement in one line:
+
+```{r}
+x <- 1
+ifelse(x == 1, "x equals 1", "x isn't equal to 1")
+```
 
 ### Functions
+
+Functions in R are defined as following:
+
+```{r}
+e <- function(x, e = 2){
+  return(x^e)
+}
+```
+
+So it's very similar to Python. You don't even need to explicitly say what to return, just a statement would suffice, although typing `return` is a good habit: sometimes your function can analyze a huge dataset and return nothing because you didn't explicitly wrote it to return anything! Also, with short functions, you don't even need to use any curly brackets, so the function above can be stripped all the way to
+
+```{r}
+e <- function(x, e = 2) x^e
+```
+
+### Apply and such
+
+`apply` is a family of functions that can be used to iterate a function over a multi-element object, just like list comprehension in Python (although apply can be much more complex). For example, 
+
+```{r}
+sapply(1:5, e)
+```
+
+We just defined the function `e` above so that `apply` knows what it is, but more often you would write temporary functions directly in there (just like lambda functions in Python):
+
+```{r}
+sapply(1:5, function(x){
+  if (x %% 2 == 0){
+    paste(x, "is even") # btw, + doesn't concatenate strings in R like in python
+  }else{
+    paste(x, "is odd")
+  }
+})
+```
+
+`sapply` is used for simple vectors, `lapply` -- to iterate over a list, and `apply` -- to two-dimensional datasets where you also have to specify a dimension (`1` for row-wise operations, `2` -- for column-vise), e.g.,
+
+```{r}
+x <- matrix(1:9, nrow = 3, ncol = 3)
+x
+
+apply(x, 1, sum)
+apply(x, 2, sum)
+```
+
+
+### Libraries
+
+R libraries are the same as modules in Python. However, there is a [central archive called CRAN](https://cran.r-project.org/) for R libraries that is maintained by the same people who develop and maintain the R language. So you don't need any external `pip`s and such, just type directly in R language `install.packages("YOUR-PACKAGE-NAME")` and it will get installed on your computer. At the beginning of each session, you have to call the package you want to use with a statement `library(yourpackagename)`. Note that we use quotes for `install.packages` but not in `library`.
+
+CRAN has quite strict requirements to packages, and some packages can be found elsewhere, e.g., GitHub. For example, in my undergrad I developed some utilities for my work that really are redundant relative to big packages like `vegan`, that is very popular in ecology. You still can install such packages using another package, `devtools`:
+
+```{r eval=F}
+install.packages("devtools") # remember that you only call this once to install it on your computer
+library(devtools) # but this one you call every time you start a new R session
+install_github("OleksiiDubovyk/ancends") # also only call once
+library(ancends) # and here is my baby
+```
 
