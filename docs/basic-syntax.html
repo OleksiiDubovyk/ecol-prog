@@ -185,6 +185,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.2.5" data-path="basic-syntax.html"><a href="basic-syntax.html#apply-and-such"><i class="fa fa-check"></i><b>3.2.5</b> Apply and such</a></li>
 <li class="chapter" data-level="3.2.6" data-path="basic-syntax.html"><a href="basic-syntax.html#libraries-1"><i class="fa fa-check"></i><b>3.2.6</b> Libraries</a></li>
 </ul></li>
+<li class="chapter" data-level="3.3" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise"><i class="fa fa-check"></i><b>3.3</b> Exercise</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise-1"><i class="fa fa-check"></i><b>3.3.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="3.3.2" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise-2"><i class="fa fa-check"></i><b>3.3.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="3.3.3" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise-3"><i class="fa fa-check"></i><b>3.3.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="3.3.4" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise-4"><i class="fa fa-check"></i><b>3.3.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="3.3.5" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise-5"><i class="fa fa-check"></i><b>3.3.5</b> Exercise 5</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -240,44 +248,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="sourceCode" id="cb15"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb15-1"><a href="basic-syntax.html#cb15-1" tabindex="-1"></a>x1 <span class="op">==</span> <span class="va">False</span></span></code></pre></div>
 <pre><code>## True</code></pre>
 <p>So it is true that the object <code>x1</code> is <code>False</code>.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="basic-syntax.html#cb17-1" tabindex="-1"></a><span class="va">False</span></span></code></pre></div>
+<pre><code>## False</code></pre>
 <p>What about strings?</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb17-1"><a href="basic-syntax.html#cb17-1" tabindex="-1"></a>x2 <span class="op">=</span> <span class="st">&quot;False&quot;</span></span>
-<span id="cb17-2"><a href="basic-syntax.html#cb17-2" tabindex="-1"></a>x2 <span class="op">==</span> <span class="va">False</span></span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="basic-syntax.html#cb19-1" tabindex="-1"></a>x2 <span class="op">=</span> <span class="st">&quot;False&quot;</span></span>
+<span id="cb19-2"><a href="basic-syntax.html#cb19-2" tabindex="-1"></a>x2 <span class="op">==</span> <span class="va">False</span></span></code></pre></div>
 <pre><code>## False</code></pre>
 <p>It is not true now, because <code>x2</code> is nothing but a string of characters and not a Boolean variable.</p>
 <p>You can index a string, i.e., access a specific element (character) in a string: just like “H” is the first letter in “Hello”, “e” is the second, and so on. Be aware, however, that indexing in Python starts with zero, so that the first element has an index [0], the second – [1], the third – [2], and so on. You can also index a sequence from the end using a minus sign, so that the last character is indexed as [-1], the second to the last – [-2]. You can also specify a range of indexed values with a colon, so that [0:3] denotes characters from the first to the fourth. Indexing in Python is specified with square brackets:</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb19-1"><a href="basic-syntax.html#cb19-1" tabindex="-1"></a>x2</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="basic-syntax.html#cb21-1" tabindex="-1"></a>x2</span></code></pre></div>
 <pre><code>## &#39;False&#39;</code></pre>
-<div class="sourceCode" id="cb21"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb21-1"><a href="basic-syntax.html#cb21-1" tabindex="-1"></a>x2[<span class="dv">0</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="basic-syntax.html#cb23-1" tabindex="-1"></a>x2[<span class="dv">0</span>]</span></code></pre></div>
 <pre><code>## &#39;F&#39;</code></pre>
-<div class="sourceCode" id="cb23"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb23-1"><a href="basic-syntax.html#cb23-1" tabindex="-1"></a>x2[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="basic-syntax.html#cb25-1" tabindex="-1"></a>x2[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## &#39;a&#39;</code></pre>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb25-1"><a href="basic-syntax.html#cb25-1" tabindex="-1"></a>x2[<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="basic-syntax.html#cb27-1" tabindex="-1"></a>x2[<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## &#39;l&#39;</code></pre>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb27-1"><a href="basic-syntax.html#cb27-1" tabindex="-1"></a>x2[<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="basic-syntax.html#cb29-1" tabindex="-1"></a>x2[<span class="op">-</span><span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## &#39;e&#39;</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb29-1"><a href="basic-syntax.html#cb29-1" tabindex="-1"></a>x2[<span class="dv">0</span>:<span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="basic-syntax.html#cb31-1" tabindex="-1"></a>x2[<span class="dv">0</span>:<span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## &#39;Fal&#39;</code></pre>
 <p>In Python, the plus operator applied to strings concatenates them:</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb31-1"><a href="basic-syntax.html#cb31-1" tabindex="-1"></a>x2[<span class="dv">0</span>:<span class="dv">3</span>] <span class="op">+</span> x2[<span class="dv">1</span>] <span class="op">+</span> x2[<span class="dv">0</span>] <span class="op">+</span> x2[<span class="dv">4</span>] <span class="op">+</span> x2[<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="basic-syntax.html#cb33-1" tabindex="-1"></a>x2[<span class="dv">0</span>:<span class="dv">3</span>] <span class="op">+</span> x2[<span class="dv">1</span>] <span class="op">+</span> x2[<span class="dv">0</span>] <span class="op">+</span> x2[<span class="dv">4</span>] <span class="op">+</span> x2[<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## &#39;FalaFel&#39;</code></pre>
 <p>Similar rules apply to lists. You can index lists, e.g.,</p>
-<div class="sourceCode" id="cb33"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb33-1"><a href="basic-syntax.html#cb33-1" tabindex="-1"></a>x3 <span class="op">=</span> <span class="bu">list</span>(x2)</span>
-<span id="cb33-2"><a href="basic-syntax.html#cb33-2" tabindex="-1"></a>x3</span></code></pre></div>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="basic-syntax.html#cb35-1" tabindex="-1"></a>x3 <span class="op">=</span> <span class="bu">list</span>(x2)</span>
+<span id="cb35-2"><a href="basic-syntax.html#cb35-2" tabindex="-1"></a>x3</span></code></pre></div>
 <pre><code>## [&#39;F&#39;, &#39;a&#39;, &#39;l&#39;, &#39;s&#39;, &#39;e&#39;]</code></pre>
-<div class="sourceCode" id="cb35"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb35-1"><a href="basic-syntax.html#cb35-1" tabindex="-1"></a>x3[<span class="dv">0</span>:<span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="basic-syntax.html#cb37-1" tabindex="-1"></a>x3[<span class="dv">0</span>:<span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [&#39;F&#39;, &#39;a&#39;, &#39;l&#39;]</code></pre>
 <p>Lists have a certain number of methods. One of the common ones is appending with another object. Notice how methods in Python are applied to objects with a period, so that you have <code>object.method(argument)</code>.</p>
-<div class="sourceCode" id="cb37"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb37-1"><a href="basic-syntax.html#cb37-1" tabindex="-1"></a>x4 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
-<span id="cb37-2"><a href="basic-syntax.html#cb37-2" tabindex="-1"></a>x4</span></code></pre></div>
-<pre><code>## [1, 2, 3, 4]</code></pre>
-<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="basic-syntax.html#cb39-1" tabindex="-1"></a>x4.append(<span class="dv">5</span>)</span>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb39-1"><a href="basic-syntax.html#cb39-1" tabindex="-1"></a>x4 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb39-2"><a href="basic-syntax.html#cb39-2" tabindex="-1"></a>x4</span></code></pre></div>
+<pre><code>## [1, 2, 3, 4]</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="basic-syntax.html#cb41-1" tabindex="-1"></a>x4.append(<span class="dv">5</span>)</span>
+<span id="cb41-2"><a href="basic-syntax.html#cb41-2" tabindex="-1"></a>x4</span></code></pre></div>
 <pre><code>## [1, 2, 3, 4, 5]</code></pre>
 <p>Each class of objects has a specific list of methods that can be applied to such objects. You might need to read python documentation for different classes (e.g., <a href="https://docs.python.org/3/tutorial/datastructures.html">here</a>). You also can save an output of a method into another object:</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb41-1"><a href="basic-syntax.html#cb41-1" tabindex="-1"></a>x4.append(<span class="dv">5</span>)</span>
-<span id="cb41-2"><a href="basic-syntax.html#cb41-2" tabindex="-1"></a>x5 <span class="op">=</span> x4.count(<span class="dv">5</span>)</span>
-<span id="cb41-3"><a href="basic-syntax.html#cb41-3" tabindex="-1"></a>x5</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb43-1"><a href="basic-syntax.html#cb43-1" tabindex="-1"></a>x4.append(<span class="dv">5</span>)</span>
+<span id="cb43-2"><a href="basic-syntax.html#cb43-2" tabindex="-1"></a>x5 <span class="op">=</span> x4.count(<span class="dv">5</span>)</span>
+<span id="cb43-3"><a href="basic-syntax.html#cb43-3" tabindex="-1"></a>x5</span></code></pre></div>
 <pre><code>## 2</code></pre>
 </div>
 <div id="operators" class="section level3 hasAnchor" number="3.1.2">
@@ -316,17 +326,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="comments" class="section level3 hasAnchor" number="3.1.3">
 <h3><span class="header-section-number">3.1.3</span> Comments<a href="basic-syntax.html#comments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>It may be useful to leave some verbal comments in your code that wouldn’t be read and executed by the computer. In Python, hash tag comments out a line of code or everything after it:</p>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="basic-syntax.html#cb43-1" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">2</span></span>
-<span id="cb43-2"><a href="basic-syntax.html#cb43-2" tabindex="-1"></a>b <span class="ot">=</span> <span class="dv">3</span></span>
-<span id="cb43-3"><a href="basic-syntax.html#cb43-3" tabindex="-1"></a><span class="co"># b = 5000</span></span>
-<span id="cb43-4"><a href="basic-syntax.html#cb43-4" tabindex="-1"></a>a <span class="sc">+</span> b <span class="co"># still 5, so b was never assigned as 5000. just like this text</span></span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="basic-syntax.html#cb45-1" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">2</span></span>
+<span id="cb45-2"><a href="basic-syntax.html#cb45-2" tabindex="-1"></a>b <span class="ot">=</span> <span class="dv">3</span></span>
+<span id="cb45-3"><a href="basic-syntax.html#cb45-3" tabindex="-1"></a><span class="co"># b = 5000</span></span>
+<span id="cb45-4"><a href="basic-syntax.html#cb45-4" tabindex="-1"></a>a <span class="sc">+</span> b <span class="co"># still 5, so b was never assigned as 5000. just like this text</span></span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 </div>
 <div id="loops" class="section level3 hasAnchor" number="3.1.4">
 <h3><span class="header-section-number">3.1.4</span> Loops<a href="basic-syntax.html#loops" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Loops are used for iterations over a sequence, meaning that you go over each element and do something with it. <code>for</code> loops are more common and do something <em>for</em> each element, and <code>while</code> loops conduct iterations as long as some logical condition is satisfied. For example,</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb45-1"><a href="basic-syntax.html#cb45-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> x4:</span>
-<span id="cb45-2"><a href="basic-syntax.html#cb45-2" tabindex="-1"></a>  <span class="bu">print</span>(i)</span></code></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="basic-syntax.html#cb47-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> x4:</span>
+<span id="cb47-2"><a href="basic-syntax.html#cb47-2" tabindex="-1"></a>  <span class="bu">print</span>(i)</span></code></pre></div>
 <pre><code>## 1
 ## 2
 ## 3
@@ -335,31 +345,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5</code></pre>
 <p>does pretty much the following: for each element of <code>x4</code>, let’s call this element <code>i</code>, and then print this <code>i</code>.</p>
 <p>In the <code>while</code> loop, on the other hand</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb47-1"><a href="basic-syntax.html#cb47-1" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">1</span> <span class="co"># initialize the variable</span></span>
-<span id="cb47-2"><a href="basic-syntax.html#cb47-2" tabindex="-1"></a><span class="co"># you can explicitly define the class, in which case it would be</span></span>
-<span id="cb47-3"><a href="basic-syntax.html#cb47-3" tabindex="-1"></a><span class="co"># number = int(1)</span></span>
-<span id="cb47-4"><a href="basic-syntax.html#cb47-4" tabindex="-1"></a></span>
-<span id="cb47-5"><a href="basic-syntax.html#cb47-5" tabindex="-1"></a><span class="cf">while</span> number <span class="op">&lt;</span> <span class="dv">5</span>:</span>
-<span id="cb47-6"><a href="basic-syntax.html#cb47-6" tabindex="-1"></a>  <span class="bu">print</span>(number)</span>
-<span id="cb47-7"><a href="basic-syntax.html#cb47-7" tabindex="-1"></a>  number <span class="op">+=</span> <span class="dv">1</span> <span class="co"># same as &quot;number = number + 1&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="basic-syntax.html#cb49-1" tabindex="-1"></a>number <span class="op">=</span> <span class="dv">1</span> <span class="co"># initialize the variable</span></span>
+<span id="cb49-2"><a href="basic-syntax.html#cb49-2" tabindex="-1"></a><span class="co"># you can explicitly define the class, in which case it would be</span></span>
+<span id="cb49-3"><a href="basic-syntax.html#cb49-3" tabindex="-1"></a><span class="co"># number = int(1)</span></span>
+<span id="cb49-4"><a href="basic-syntax.html#cb49-4" tabindex="-1"></a></span>
+<span id="cb49-5"><a href="basic-syntax.html#cb49-5" tabindex="-1"></a><span class="cf">while</span> number <span class="op">&lt;</span> <span class="dv">5</span>:</span>
+<span id="cb49-6"><a href="basic-syntax.html#cb49-6" tabindex="-1"></a>  <span class="bu">print</span>(number)</span>
+<span id="cb49-7"><a href="basic-syntax.html#cb49-7" tabindex="-1"></a>  number <span class="op">+=</span> <span class="dv">1</span> <span class="co"># same as &quot;number = number + 1&quot;</span></span></code></pre></div>
 <pre><code>## 1
 ## 2
 ## 3
 ## 4</code></pre>
 <p>which the computer understands as the following: create a variable <code>number</code> and assign it a value of <code>1</code>; then run an iteration, at each step of which print out the value of the <code>number</code> and increase its value by one; this process is repeated as long as the statement <code>number &lt; 5</code> is <code>True</code>; once <code>number</code> becomes <code>5</code>, this0 statement becomes <code>False</code> and the loop stops.</p>
 <p>While loops are a bit tricky because you can accidentally end up with an infinite loop. For example,</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb49-1"><a href="basic-syntax.html#cb49-1" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb49-2"><a href="basic-syntax.html#cb49-2" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;AAAAAA&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb51-1"><a href="basic-syntax.html#cb51-1" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb51-2"><a href="basic-syntax.html#cb51-2" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;AAAAAA&quot;</span>)</span></code></pre></div>
 <p>If you run it, your computer will never stop yelling at you because <code>True</code> is always <code>True</code>, and the while loop execute every next iteration.</p>
 </div>
 <div id="ifelse" class="section level3 hasAnchor" number="3.1.5">
 <h3><span class="header-section-number">3.1.5</span> If/else<a href="basic-syntax.html#ifelse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>What if you run a loop and want different outcomes under different conditions? That’s where you would use an <code>if</code>/<code>else</code> statement. For example, you for your sequence you can check if a number is odd or even:</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb50-1"><a href="basic-syntax.html#cb50-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> x4:</span>
-<span id="cb50-2"><a href="basic-syntax.html#cb50-2" tabindex="-1"></a>  <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
-<span id="cb50-3"><a href="basic-syntax.html#cb50-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is even&quot;</span>)<span class="op">;</span></span>
-<span id="cb50-4"><a href="basic-syntax.html#cb50-4" tabindex="-1"></a>  <span class="cf">else</span>:</span>
-<span id="cb50-5"><a href="basic-syntax.html#cb50-5" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is odd&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="basic-syntax.html#cb52-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> x4:</span>
+<span id="cb52-2"><a href="basic-syntax.html#cb52-2" tabindex="-1"></a>  <span class="cf">if</span> i <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb52-3"><a href="basic-syntax.html#cb52-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is even&quot;</span>)<span class="op">;</span></span>
+<span id="cb52-4"><a href="basic-syntax.html#cb52-4" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb52-5"><a href="basic-syntax.html#cb52-5" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is odd&quot;</span>)</span></code></pre></div>
 <pre><code>## 1 is odd
 ## 2 is even
 ## 3 is odd
@@ -368,13 +378,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 5 is odd</code></pre>
 <p>Here, we apply a modulo operator <code>%</code> to our value <code>i</code> to check the reminder of dividing <code>i/2</code> equals zero; if <code>True</code>, then <code>i</code> is even, else it is odd.</p>
 <p>There could be more complex logical operations. What is the sequence represents something that we want to classify into three levels: low (0–1), medium (2–4), or high (5 and higher):</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb52-1"><a href="basic-syntax.html#cb52-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> x4:</span>
-<span id="cb52-2"><a href="basic-syntax.html#cb52-2" tabindex="-1"></a>  <span class="cf">if</span> i <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
-<span id="cb52-3"><a href="basic-syntax.html#cb52-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is low&quot;</span>)<span class="op">;</span></span>
-<span id="cb52-4"><a href="basic-syntax.html#cb52-4" tabindex="-1"></a>  <span class="cf">elif</span> i <span class="op">&gt;</span> <span class="dv">1</span> <span class="kw">and</span> i <span class="op">&lt;=</span> <span class="dv">4</span>:</span>
-<span id="cb52-5"><a href="basic-syntax.html#cb52-5" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is medium&quot;</span>)<span class="op">;</span></span>
-<span id="cb52-6"><a href="basic-syntax.html#cb52-6" tabindex="-1"></a>  <span class="cf">else</span>:</span>
-<span id="cb52-7"><a href="basic-syntax.html#cb52-7" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is high&quot;</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="basic-syntax.html#cb54-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> x4:</span>
+<span id="cb54-2"><a href="basic-syntax.html#cb54-2" tabindex="-1"></a>  <span class="cf">if</span> i <span class="op">&lt;=</span> <span class="dv">1</span>:</span>
+<span id="cb54-3"><a href="basic-syntax.html#cb54-3" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is low&quot;</span>)<span class="op">;</span></span>
+<span id="cb54-4"><a href="basic-syntax.html#cb54-4" tabindex="-1"></a>  <span class="cf">elif</span> i <span class="op">&gt;</span> <span class="dv">1</span> <span class="kw">and</span> i <span class="op">&lt;=</span> <span class="dv">4</span>:</span>
+<span id="cb54-5"><a href="basic-syntax.html#cb54-5" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is medium&quot;</span>)<span class="op">;</span></span>
+<span id="cb54-6"><a href="basic-syntax.html#cb54-6" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb54-7"><a href="basic-syntax.html#cb54-7" tabindex="-1"></a>    <span class="bu">print</span>(<span class="bu">str</span>(i)<span class="op">+</span><span class="st">&quot; is high&quot;</span>)<span class="op">;</span></span></code></pre></div>
 <pre><code>## 1 is low
 ## 2 is medium
 ## 3 is medium
@@ -386,15 +396,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="functions" class="section level3 hasAnchor" number="3.1.6">
 <h3><span class="header-section-number">3.1.6</span> Functions<a href="basic-syntax.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Just like in math, a function is something that receives some input, or argument, and returns some input. For example, we want to write a function <span class="math inline">\(f(x) = x^2\)</span>:</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb54-1"><a href="basic-syntax.html#cb54-1" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
-<span id="cb54-2"><a href="basic-syntax.html#cb54-2" tabindex="-1"></a>  <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="basic-syntax.html#cb56-1" tabindex="-1"></a><span class="kw">def</span> f(x):</span>
+<span id="cb56-2"><a href="basic-syntax.html#cb56-2" tabindex="-1"></a>  <span class="cf">return</span> x<span class="op">**</span><span class="dv">2</span></span></code></pre></div>
 <p><code>def</code> means “define a function”, which the computer will memorize as <code>f</code>, it has an argument <code>x</code>, and the function exponentiates the argument to the power of 2. You can write an output of a function into a different variable.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb55-1"><a href="basic-syntax.html#cb55-1" tabindex="-1"></a>y <span class="op">=</span> f(<span class="dv">2</span>)</span>
-<span id="cb55-2"><a href="basic-syntax.html#cb55-2" tabindex="-1"></a>y</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="basic-syntax.html#cb57-1" tabindex="-1"></a>y <span class="op">=</span> f(<span class="dv">2</span>)</span>
+<span id="cb57-2"><a href="basic-syntax.html#cb57-2" tabindex="-1"></a>y</span></code></pre></div>
 <pre><code>## 4</code></pre>
 <p>You can apply functions in a loop, e.g.,</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb57-1"><a href="basic-syntax.html#cb57-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> x4:</span>
-<span id="cb57-2"><a href="basic-syntax.html#cb57-2" tabindex="-1"></a>  <span class="bu">print</span>(f(i))</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="basic-syntax.html#cb59-1" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> x4:</span>
+<span id="cb59-2"><a href="basic-syntax.html#cb59-2" tabindex="-1"></a>  <span class="bu">print</span>(f(i))</span></code></pre></div>
 <pre><code>## 1
 ## 4
 ## 9
@@ -402,13 +412,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 25
 ## 25</code></pre>
 <p>A function can have several arguments. For example, what if we want to use power different from 2?</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb59-1"><a href="basic-syntax.html#cb59-1" tabindex="-1"></a><span class="kw">def</span> exp(x, e <span class="op">=</span> <span class="dv">2</span>):</span>
-<span id="cb59-2"><a href="basic-syntax.html#cb59-2" tabindex="-1"></a>  <span class="cf">return</span> x<span class="op">**</span>e</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb61-1"><a href="basic-syntax.html#cb61-1" tabindex="-1"></a><span class="kw">def</span> exp(x, e <span class="op">=</span> <span class="dv">2</span>):</span>
+<span id="cb61-2"><a href="basic-syntax.html#cb61-2" tabindex="-1"></a>  <span class="cf">return</span> x<span class="op">**</span>e</span></code></pre></div>
 <p>In that function, we defined a default option for argument <code>e</code>. Now, if the function doesn’t receive the value of this argument, it will always assume that <code>e = 2</code>.</p>
 <p>It is a good idea to define the arguments, but otherwise Python will read them in the order they were written in the function. So that the code <code>exp(2, 5)</code> will generate the same output as <code>exp(x = 2, e = 5)</code>.</p>
 <p>Note that loops and Python in general are indent-sensitive: all statements in a loop or function should be indented in a stepwise manner. For example, this code will throw out an error because there is an indent missing:</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="basic-syntax.html#cb60-1" tabindex="-1"></a><span class="kw">def</span> exp(x, e <span class="op">=</span> <span class="dv">2</span>):</span>
-<span id="cb60-2"><a href="basic-syntax.html#cb60-2" tabindex="-1"></a><span class="cf">return</span> x<span class="op">**</span>e</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb62-1"><a href="basic-syntax.html#cb62-1" tabindex="-1"></a><span class="kw">def</span> exp(x, e <span class="op">=</span> <span class="dv">2</span>):</span>
+<span id="cb62-2"><a href="basic-syntax.html#cb62-2" tabindex="-1"></a><span class="cf">return</span> x<span class="op">**</span>e</span></code></pre></div>
 <pre><code>## expected an indented block after function definition on line 1 (&lt;string&gt;, line 2)</code></pre>
 </div>
 <div id="libraries" class="section level3 hasAnchor" number="3.1.7">
@@ -417,58 +427,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>For example, I want to generate a random number. Though it seems simple, there is some math involved and I don’t want to waste time tackling this problem. Well there exists a Python module for random number generation called `random``.</p>
 <p>Here is the part I don’t like too much compared to R: installing a module can be tricky, especially for a beginner. And if for some reason you need several modules that are interdependent, get ready to spend a day solving compatibility issues between them.</p>
 <p>Anyway, you might need to <a href="https://pip.pypa.io/en/stable/installation/">install</a> <code>pip</code> on your computer. This little guy, a package manager, is supposed to make it easier to install modules and avoid dependency errors. After installed, you should run pip through the command line like this (erm, it actually won’t work because <code>random</code> is comes with Python when you install the language, but this is the syntax you could use when installing a new package):</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb62-1"><a href="basic-syntax.html#cb62-1" tabindex="-1"></a><span class="ex">pip</span> install random</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb64-1"><a href="basic-syntax.html#cb64-1" tabindex="-1"></a><span class="ex">pip</span> install random</span></code></pre></div>
 <p>Now, at the beginning of a script, we need to tell Python the module to load. After that is done, you can call objects from the module like <code>module.object</code>:</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb63-1"><a href="basic-syntax.html#cb63-1" tabindex="-1"></a><span class="im">import</span> random <span class="co"># load the module</span></span>
-<span id="cb63-2"><a href="basic-syntax.html#cb63-2" tabindex="-1"></a></span>
-<span id="cb63-3"><a href="basic-syntax.html#cb63-3" tabindex="-1"></a>random_list <span class="op">=</span> [] <span class="co"># initialize the list</span></span>
-<span id="cb63-4"><a href="basic-syntax.html#cb63-4" tabindex="-1"></a></span>
-<span id="cb63-5"><a href="basic-syntax.html#cb63-5" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>): <span class="co"># 10 iterations</span></span>
-<span id="cb63-6"><a href="basic-syntax.html#cb63-6" tabindex="-1"></a>  x <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">100</span>) <span class="co"># create an intermediate random integer value between 0 and 11</span></span>
-<span id="cb63-7"><a href="basic-syntax.html#cb63-7" tabindex="-1"></a>  random_list.append(x) <span class="co"># append the list</span></span>
-<span id="cb63-8"><a href="basic-syntax.html#cb63-8" tabindex="-1"></a></span>
-<span id="cb63-9"><a href="basic-syntax.html#cb63-9" tabindex="-1"></a><span class="bu">print</span>(random_list)</span></code></pre></div>
-<pre><code>## [88, 64, 21, 73, 84, 33, 96, 77, 63, 97]</code></pre>
-<p>You can also use aliases in module names and their parts as following:</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="basic-syntax.html#cb65-1" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
+<div class="sourceCode" id="cb65"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb65-1"><a href="basic-syntax.html#cb65-1" tabindex="-1"></a><span class="im">import</span> random <span class="co"># load the module</span></span>
 <span id="cb65-2"><a href="basic-syntax.html#cb65-2" tabindex="-1"></a></span>
-<span id="cb65-3"><a href="basic-syntax.html#cb65-3" tabindex="-1"></a>random_list <span class="op">=</span> []</span>
+<span id="cb65-3"><a href="basic-syntax.html#cb65-3" tabindex="-1"></a>random_list <span class="op">=</span> [] <span class="co"># initialize the list</span></span>
 <span id="cb65-4"><a href="basic-syntax.html#cb65-4" tabindex="-1"></a></span>
-<span id="cb65-5"><a href="basic-syntax.html#cb65-5" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb65-6"><a href="basic-syntax.html#cb65-6" tabindex="-1"></a>  x <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">100</span>)</span>
-<span id="cb65-7"><a href="basic-syntax.html#cb65-7" tabindex="-1"></a>  random_list.append(x)</span>
+<span id="cb65-5"><a href="basic-syntax.html#cb65-5" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>): <span class="co"># 10 iterations</span></span>
+<span id="cb65-6"><a href="basic-syntax.html#cb65-6" tabindex="-1"></a>  x <span class="op">=</span> random.randint(<span class="dv">0</span>, <span class="dv">100</span>) <span class="co"># create an intermediate random integer value between 0 and 11</span></span>
+<span id="cb65-7"><a href="basic-syntax.html#cb65-7" tabindex="-1"></a>  random_list.append(x) <span class="co"># append the list</span></span>
 <span id="cb65-8"><a href="basic-syntax.html#cb65-8" tabindex="-1"></a></span>
 <span id="cb65-9"><a href="basic-syntax.html#cb65-9" tabindex="-1"></a><span class="bu">print</span>(random_list)</span></code></pre></div>
-<pre><code>## [82, 37, 73, 96, 88, 40, 14, 89, 34, 24]</code></pre>
+<pre><code>## [81, 58, 57, 78, 84, 91, 62, 94, 100, 32]</code></pre>
+<p>You can also use aliases in module names and their parts as following:</p>
+<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="basic-syntax.html#cb67-1" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
+<span id="cb67-2"><a href="basic-syntax.html#cb67-2" tabindex="-1"></a></span>
+<span id="cb67-3"><a href="basic-syntax.html#cb67-3" tabindex="-1"></a>random_list <span class="op">=</span> []</span>
+<span id="cb67-4"><a href="basic-syntax.html#cb67-4" tabindex="-1"></a></span>
+<span id="cb67-5"><a href="basic-syntax.html#cb67-5" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb67-6"><a href="basic-syntax.html#cb67-6" tabindex="-1"></a>  x <span class="op">=</span> rand.randint(<span class="dv">0</span>, <span class="dv">100</span>)</span>
+<span id="cb67-7"><a href="basic-syntax.html#cb67-7" tabindex="-1"></a>  random_list.append(x)</span>
+<span id="cb67-8"><a href="basic-syntax.html#cb67-8" tabindex="-1"></a></span>
+<span id="cb67-9"><a href="basic-syntax.html#cb67-9" tabindex="-1"></a><span class="bu">print</span>(random_list)</span></code></pre></div>
+<pre><code>## [7, 43, 24, 76, 42, 31, 28, 79, 64, 34]</code></pre>
 </div>
 <div id="lambda-functions" class="section level3 hasAnchor" number="3.1.8">
 <h3><span class="header-section-number">3.1.8</span> Lambda functions<a href="basic-syntax.html#lambda-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Lambda functions are very simple and short syntax features that are useful for tasks where you don’t really need to write a whole function. Once you run a lambda function, it is deleted from your memory.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="basic-syntax.html#cb67-1" tabindex="-1"></a><span class="kw">def</span> big_function(a, b, add <span class="op">=</span> <span class="va">True</span>):</span>
-<span id="cb67-2"><a href="basic-syntax.html#cb67-2" tabindex="-1"></a>  <span class="cf">if</span> add:</span>
-<span id="cb67-3"><a href="basic-syntax.html#cb67-3" tabindex="-1"></a>    small_function <span class="op">=</span> <span class="kw">lambda</span> a, b : a <span class="op">+</span> b</span>
-<span id="cb67-4"><a href="basic-syntax.html#cb67-4" tabindex="-1"></a>  <span class="cf">else</span>:</span>
-<span id="cb67-5"><a href="basic-syntax.html#cb67-5" tabindex="-1"></a>    small_function <span class="op">=</span> <span class="kw">lambda</span> a, b : a <span class="op">-</span> b</span>
-<span id="cb67-6"><a href="basic-syntax.html#cb67-6" tabindex="-1"></a>  output <span class="op">=</span> small_function(a, b)</span>
-<span id="cb67-7"><a href="basic-syntax.html#cb67-7" tabindex="-1"></a>  <span class="cf">return</span> output</span></code></pre></div>
+<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="basic-syntax.html#cb69-1" tabindex="-1"></a><span class="kw">def</span> big_function(a, b, add <span class="op">=</span> <span class="va">True</span>):</span>
+<span id="cb69-2"><a href="basic-syntax.html#cb69-2" tabindex="-1"></a>  <span class="cf">if</span> add:</span>
+<span id="cb69-3"><a href="basic-syntax.html#cb69-3" tabindex="-1"></a>    small_function <span class="op">=</span> <span class="kw">lambda</span> a, b : a <span class="op">+</span> b</span>
+<span id="cb69-4"><a href="basic-syntax.html#cb69-4" tabindex="-1"></a>  <span class="cf">else</span>:</span>
+<span id="cb69-5"><a href="basic-syntax.html#cb69-5" tabindex="-1"></a>    small_function <span class="op">=</span> <span class="kw">lambda</span> a, b : a <span class="op">-</span> b</span>
+<span id="cb69-6"><a href="basic-syntax.html#cb69-6" tabindex="-1"></a>  output <span class="op">=</span> small_function(a, b)</span>
+<span id="cb69-7"><a href="basic-syntax.html#cb69-7" tabindex="-1"></a>  <span class="cf">return</span> output</span></code></pre></div>
 <p>In this function, we first check if the argument <code>add</code> is True (note that <code>if add</code> and <code>if add == True</code> will produce the same result since if <code>add = True</code>, then the statement <code>add == True</code> will produce <code>True</code>). Depending on it, we create a <code>small_function</code> which adds or subtracts the arguments. Then we just apply the <code>small_function</code> to the <code>big_function</code>’s arguments <code>a</code> and <code>b</code> without a need to define clumsy <code>small_function</code> with <code>def</code> and all that stuff.</p>
 </div>
 <div id="list-comprehension" class="section level3 hasAnchor" number="3.1.9">
 <h3><span class="header-section-number">3.1.9</span> List comprehension<a href="basic-syntax.html#list-comprehension" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>List comprehension is an interesting technique that could be used to create sequences that follow a certain pattern without writing a clumsy <code>for</code> loop. For example, the statement</p>
-<div class="sourceCode" id="cb68"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb68-1"><a href="basic-syntax.html#cb68-1" tabindex="-1"></a>doubles1 <span class="op">=</span> [x<span class="op">*</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>)]</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="basic-syntax.html#cb70-1" tabindex="-1"></a>doubles1 <span class="op">=</span> [x<span class="op">*</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>)]</span></code></pre></div>
 <p>produces the same output as</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb69-1"><a href="basic-syntax.html#cb69-1" tabindex="-1"></a>doubles2 <span class="op">=</span> []</span>
-<span id="cb69-2"><a href="basic-syntax.html#cb69-2" tabindex="-1"></a></span>
-<span id="cb69-3"><a href="basic-syntax.html#cb69-3" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>):</span>
-<span id="cb69-4"><a href="basic-syntax.html#cb69-4" tabindex="-1"></a>  doubles2.append(x<span class="op">*</span><span class="dv">2</span>)<span class="op">;</span></span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb71-1"><a href="basic-syntax.html#cb71-1" tabindex="-1"></a>doubles2 <span class="op">=</span> []</span>
+<span id="cb71-2"><a href="basic-syntax.html#cb71-2" tabindex="-1"></a></span>
+<span id="cb71-3"><a href="basic-syntax.html#cb71-3" tabindex="-1"></a><span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>):</span>
+<span id="cb71-4"><a href="basic-syntax.html#cb71-4" tabindex="-1"></a>  doubles2.append(x<span class="op">*</span><span class="dv">2</span>)<span class="op">;</span></span></code></pre></div>
 <p>Let’s compare them:</p>
-<div class="sourceCode" id="cb70"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb70-1"><a href="basic-syntax.html#cb70-1" tabindex="-1"></a>doubles1</span></code></pre></div>
+<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="basic-syntax.html#cb72-1" tabindex="-1"></a>doubles1</span></code></pre></div>
 <pre><code>## [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</code></pre>
-<div class="sourceCode" id="cb72"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb72-1"><a href="basic-syntax.html#cb72-1" tabindex="-1"></a>doubles2</span></code></pre></div>
+<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="basic-syntax.html#cb74-1" tabindex="-1"></a>doubles2</span></code></pre></div>
 <pre><code>## [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]</code></pre>
 <p>You can also embed <code>if</code> statements in comprehended lists, e.g.,</p>
-<div class="sourceCode" id="cb74"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb74-1"><a href="basic-syntax.html#cb74-1" tabindex="-1"></a>[x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="cf">if</span> x<span class="op">&gt;</span><span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb76"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb76-1"><a href="basic-syntax.html#cb76-1" tabindex="-1"></a>[x<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="cf">if</span> x<span class="op">&gt;</span><span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [16, 25, 36, 49, 64, 81]</code></pre>
 </div>
 </div>
@@ -477,49 +487,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="create-and-play-with-variables-1" class="section level3 hasAnchor" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Create and play with variables<a href="basic-syntax.html#create-and-play-with-variables-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Python style of assigning values to objects with an equal sign (e.g., <code>x = 1</code>) is valid in R. However, it is far more popular (and easier to read) to use an “arrow” operator <code>&lt;-</code>, which in RStudio can be done through a shortcut LAlt + - (left Alt and minus sign).</p>
-<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="basic-syntax.html#cb76-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb76-2"><a href="basic-syntax.html#cb76-2" tabindex="-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="basic-syntax.html#cb78-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb78-2"><a href="basic-syntax.html#cb78-2" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <p>Boolean values are written as <code>TRUE</code>/<code>FALSE</code> or abbreviated <code>T</code>/<code>F</code>:</p>
-<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="basic-syntax.html#cb78-1" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">==</span> F</span></code></pre></div>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="basic-syntax.html#cb80-1" tabindex="-1"></a><span class="cn">FALSE</span> <span class="sc">==</span> F</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>So it is true that false is false.</p>
 <p>Characters and numeric objects are created in the same way,</p>
-<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="basic-syntax.html#cb80-1" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
-<span id="cb80-2"><a href="basic-syntax.html#cb80-2" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="st">&quot;x2&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="basic-syntax.html#cb82-1" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fl">1.5</span></span>
+<span id="cb82-2"><a href="basic-syntax.html#cb82-2" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="st">&quot;x2&quot;</span></span></code></pre></div>
 <p>Sequences of objects are called vectors and are created using a function <code>c()</code></p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="basic-syntax.html#cb81-1" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
-<span id="cb81-2"><a href="basic-syntax.html#cb81-2" tabindex="-1"></a>v1</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="basic-syntax.html#cb83-1" tabindex="-1"></a>v1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span>
+<span id="cb83-2"><a href="basic-syntax.html#cb83-2" tabindex="-1"></a>v1</span></code></pre></div>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
 <p>You can also create sequences of integers using colon,</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="basic-syntax.html#cb83-1" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="basic-syntax.html#cb85-1" tabindex="-1"></a><span class="dv">1</span><span class="sc">:</span><span class="dv">10</span></span></code></pre></div>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
 <p>Or sequences of values using dedicated functions</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="basic-syntax.html#cb85-1" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="fl">0.5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="basic-syntax.html#cb87-1" tabindex="-1"></a><span class="fu">seq</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="fl">0.5</span>)</span></code></pre></div>
 <pre><code>## [1] 1.0 1.5 2.0 2.5 3.0 3.5 4.0 4.5 5.0</code></pre>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="basic-syntax.html#cb87-1" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">5</span>, <span class="at">length.out =</span> <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="basic-syntax.html#cb89-1" tabindex="-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">5</span>, <span class="at">length.out =</span> <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## [1] 1.000000 2.333333 3.666667 5.000000</code></pre>
 <p>Note that indexing in R, unlike Python, begins with 1:</p>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="basic-syntax.html#cb89-1" tabindex="-1"></a>v1[<span class="dv">1</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="basic-syntax.html#cb91-1" tabindex="-1"></a>v1[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="basic-syntax.html#cb91-1" tabindex="-1"></a>v1[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="basic-syntax.html#cb93-1" tabindex="-1"></a>v1[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [1] 1 2 3</code></pre>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="basic-syntax.html#cb93-1" tabindex="-1"></a>v1[<span class="sc">-</span><span class="dv">4</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="basic-syntax.html#cb95-1" tabindex="-1"></a>v1[<span class="sc">-</span><span class="dv">4</span>]</span></code></pre></div>
 <pre><code>## [1] 1 2 3 5</code></pre>
 <p>Vectors can only contain objects of the same class. R will either throw an error or try to change all objects to one class if you try to violate this rule:</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="basic-syntax.html#cb95-1" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">&quot;three&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="basic-syntax.html#cb97-1" tabindex="-1"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">&quot;three&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;1&quot;     &quot;2&quot;     &quot;three&quot;</code></pre>
 <p>The simplest combination of vectors is a matrix. It is the same as a matrix in math and you can do linear algebra in basic R.</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="basic-syntax.html#cb97-1" tabindex="-1"></a><span class="fu">matrix</span>(<span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">byrow =</span> T)</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="basic-syntax.html#cb99-1" tabindex="-1"></a><span class="fu">matrix</span>(<span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">byrow =</span> T)</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    2    3
 ## [2,]    4    5    6
 ## [3,]    7    8    9</code></pre>
 <p>Whatever is called lists in R is different from Python. It is more similar to JSON or XML kind of objects, and perhaps closer to Python dictionaries. It can be used to store different types of data with different dimensionality.</p>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="basic-syntax.html#cb99-1" tabindex="-1"></a>l1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;first element&quot;</span> <span class="ot">=</span> T,</span>
-<span id="cb99-2"><a href="basic-syntax.html#cb99-2" tabindex="-1"></a>           <span class="st">&quot;second element&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
-<span id="cb99-3"><a href="basic-syntax.html#cb99-3" tabindex="-1"></a>           <span class="st">&quot;third element&quot;</span> <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">nrow =</span> <span class="dv">3</span>))</span>
-<span id="cb99-4"><a href="basic-syntax.html#cb99-4" tabindex="-1"></a>l1</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="basic-syntax.html#cb101-1" tabindex="-1"></a>l1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;first element&quot;</span> <span class="ot">=</span> T,</span>
+<span id="cb101-2"><a href="basic-syntax.html#cb101-2" tabindex="-1"></a>           <span class="st">&quot;second element&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
+<span id="cb101-3"><a href="basic-syntax.html#cb101-3" tabindex="-1"></a>           <span class="st">&quot;third element&quot;</span> <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">nrow =</span> <span class="dv">3</span>))</span>
+<span id="cb101-4"><a href="basic-syntax.html#cb101-4" tabindex="-1"></a>l1</span></code></pre></div>
 <pre><code>## $`first element`
 ## [1] TRUE
 ## 
@@ -532,8 +542,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [2,]    2    5    8
 ## [3,]    3    6    9</code></pre>
 <p>Note that R is not an indent-sensitive language and you can hit the next line for better readability. It all gets executed as a single line:</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="basic-syntax.html#cb101-1" tabindex="-1"></a>l2 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;first element&quot;</span> <span class="ot">=</span> T, <span class="st">&quot;second element&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), <span class="st">&quot;third element&quot;</span> <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">nrow =</span> <span class="dv">3</span>))</span>
-<span id="cb101-2"><a href="basic-syntax.html#cb101-2" tabindex="-1"></a>l2</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="basic-syntax.html#cb103-1" tabindex="-1"></a>l2 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="st">&quot;first element&quot;</span> <span class="ot">=</span> T, <span class="st">&quot;second element&quot;</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), <span class="st">&quot;third element&quot;</span> <span class="ot">=</span> <span class="fu">matrix</span>(<span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">nrow =</span> <span class="dv">3</span>))</span>
+<span id="cb103-2"><a href="basic-syntax.html#cb103-2" tabindex="-1"></a>l2</span></code></pre></div>
 <pre><code>## $`first element`
 ## [1] TRUE
 ## 
@@ -546,21 +556,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## [2,]    2    5    8
 ## [3,]    3    6    9</code></pre>
 <p>You can index list elements by their index or name, e.g., (note that you have to use double brackets to index list elements)</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="basic-syntax.html#cb103-1" tabindex="-1"></a>l1[[<span class="st">&quot;first element&quot;</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="basic-syntax.html#cb105-1" tabindex="-1"></a>l1[[<span class="st">&quot;first element&quot;</span>]]</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="basic-syntax.html#cb105-1" tabindex="-1"></a>l1[[<span class="dv">3</span>]]</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="basic-syntax.html#cb107-1" tabindex="-1"></a>l1[[<span class="dv">3</span>]]</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    4    7
 ## [2,]    2    5    8
 ## [3,]    3    6    9</code></pre>
-<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="basic-syntax.html#cb107-1" tabindex="-1"></a>l1[[<span class="dv">2</span>]][<span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="basic-syntax.html#cb109-1" tabindex="-1"></a>l1[[<span class="dv">2</span>]][<span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 </div>
 <div id="operators-and-comments" class="section level3 hasAnchor" number="3.2.2">
 <h3><span class="header-section-number">3.2.2</span> Operators and comments<a href="basic-syntax.html#operators-and-comments" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are some differences in notation compared to the operators used in Python.</p>
 <p>Note that R operators work on vectors. In all fairness, what I said earlier about R object types wasn’t exactly correct: all single-element objects are vectors, so it’s not like “a vector is a sequence of several (say) numeric objects”, but “a single numeric value is just a numeric vector of length 1”. So look what happens when a simple arithmetic operator is applied to vectors:</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="basic-syntax.html#cb109-1" tabindex="-1"></a>(<span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="basic-syntax.html#cb111-1" tabindex="-1"></a>(<span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">+</span> (<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] -1  1  3  5  7</code></pre>
 <p>The operation is repeated for all elements of the vector.</p>
 <ul>
@@ -598,13 +608,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><code>%&gt;%</code> if you use tidyverse or <code>|&gt;</code> in latest R distributions: the idea of pipe to make a statement where you apply a result of one function to another function more readable, so instead of code that reads <code>function4(function3(function2(function1(x))))</code> you could write</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="basic-syntax.html#cb111-1" tabindex="-1"></a>x <span class="sc">%&gt;%</span></span>
-<span id="cb111-2"><a href="basic-syntax.html#cb111-2" tabindex="-1"></a>  <span class="fu">function1</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb111-3"><a href="basic-syntax.html#cb111-3" tabindex="-1"></a>  <span class="fu">function2</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb111-4"><a href="basic-syntax.html#cb111-4" tabindex="-1"></a>  <span class="fu">function3</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb111-5"><a href="basic-syntax.html#cb111-5" tabindex="-1"></a>  <span class="fu">function4</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="basic-syntax.html#cb113-1" tabindex="-1"></a>x <span class="sc">%&gt;%</span></span>
+<span id="cb113-2"><a href="basic-syntax.html#cb113-2" tabindex="-1"></a>  <span class="fu">function1</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb113-3"><a href="basic-syntax.html#cb113-3" tabindex="-1"></a>  <span class="fu">function2</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb113-4"><a href="basic-syntax.html#cb113-4" tabindex="-1"></a>  <span class="fu">function3</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb113-5"><a href="basic-syntax.html#cb113-5" tabindex="-1"></a>  <span class="fu">function4</span>()</span></code></pre></div>
 <p>Regarding the difference between vectorized and elemental logical operators, vectorized ones always apply to all elements of a vector, e.g.,</p>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="basic-syntax.html#cb112-1" tabindex="-1"></a>((<span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">&gt;=</span> <span class="dv">0</span>) <span class="sc">&amp;</span> ((<span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">&lt;=</span> <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="basic-syntax.html#cb114-1" tabindex="-1"></a>((<span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">&gt;=</span> <span class="dv">0</span>) <span class="sc">&amp;</span> ((<span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>) <span class="sc">&lt;=</span> <span class="dv">0</span>)</span></code></pre></div>
 <pre><code>## [1] FALSE FALSE  TRUE FALSE FALSE</code></pre>
 <p>First, it evaluates the statements <code>((-2:2) &gt;= 0)</code> (outputs <code>F F T T T</code>) and <code>((-2:2) &lt;= 0)</code> (outputs <code>T T T F F</code>), and then applies the <code>&amp;</code> operator to all five pairs, yielding only one that is <code>T</code> and <code>T</code> in both vectors.</p>
 <p>Now, the statement <code>((-2:2) &gt;= 0) &amp;&amp; ((-2:2) &lt;= 0)</code> will throw an error because <code>&amp;&amp;</code> can only be used with two single-element objects. It can be useful when you must be sure that you check single logical values and if a vector creeps in your code, then this code won’t run.</p>
@@ -613,69 +623,107 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="loops-and-ifelse" class="section level3 hasAnchor" number="3.2.3">
 <h3><span class="header-section-number">3.2.3</span> Loops and if/else<a href="basic-syntax.html#loops-and-ifelse" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Syntax is fairly similar to Python, but again, indentation is not important in R. Unlike Python, you are expected to separate the statement you iterate over with parentheses, while the iterative statement is contained within curly brackets.</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="basic-syntax.html#cb114-1" tabindex="-1"></a>odds <span class="ot">&lt;-</span> <span class="fu">numeric</span>() <span class="co"># initialize empty numeric vector</span></span>
-<span id="cb114-2"><a href="basic-syntax.html#cb114-2" tabindex="-1"></a>evens <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
-<span id="cb114-3"><a href="basic-syntax.html#cb114-3" tabindex="-1"></a></span>
-<span id="cb114-4"><a href="basic-syntax.html#cb114-4" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb114-5"><a href="basic-syntax.html#cb114-5" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
-<span id="cb114-6"><a href="basic-syntax.html#cb114-6" tabindex="-1"></a>    odds <span class="ot">&lt;-</span> <span class="fu">c</span>(odds, i) <span class="co"># there is no append command so you have to rewrite the object at each step</span></span>
-<span id="cb114-7"><a href="basic-syntax.html#cb114-7" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
-<span id="cb114-8"><a href="basic-syntax.html#cb114-8" tabindex="-1"></a>    evens <span class="ot">&lt;-</span> <span class="fu">c</span>(evens, i)</span>
-<span id="cb114-9"><a href="basic-syntax.html#cb114-9" tabindex="-1"></a>  }</span>
-<span id="cb114-10"><a href="basic-syntax.html#cb114-10" tabindex="-1"></a>}</span>
-<span id="cb114-11"><a href="basic-syntax.html#cb114-11" tabindex="-1"></a></span>
-<span id="cb114-12"><a href="basic-syntax.html#cb114-12" tabindex="-1"></a>odds</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="basic-syntax.html#cb116-1" tabindex="-1"></a>odds <span class="ot">&lt;-</span> <span class="fu">numeric</span>() <span class="co"># initialize empty numeric vector</span></span>
+<span id="cb116-2"><a href="basic-syntax.html#cb116-2" tabindex="-1"></a>evens <span class="ot">&lt;-</span> <span class="fu">numeric</span>()</span>
+<span id="cb116-3"><a href="basic-syntax.html#cb116-3" tabindex="-1"></a></span>
+<span id="cb116-4"><a href="basic-syntax.html#cb116-4" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb116-5"><a href="basic-syntax.html#cb116-5" tabindex="-1"></a>  <span class="cf">if</span> (i <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb116-6"><a href="basic-syntax.html#cb116-6" tabindex="-1"></a>    odds <span class="ot">&lt;-</span> <span class="fu">c</span>(odds, i) <span class="co"># there is no append command so you have to rewrite the object at each step</span></span>
+<span id="cb116-7"><a href="basic-syntax.html#cb116-7" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb116-8"><a href="basic-syntax.html#cb116-8" tabindex="-1"></a>    evens <span class="ot">&lt;-</span> <span class="fu">c</span>(evens, i)</span>
+<span id="cb116-9"><a href="basic-syntax.html#cb116-9" tabindex="-1"></a>  }</span>
+<span id="cb116-10"><a href="basic-syntax.html#cb116-10" tabindex="-1"></a>}</span>
+<span id="cb116-11"><a href="basic-syntax.html#cb116-11" tabindex="-1"></a></span>
+<span id="cb116-12"><a href="basic-syntax.html#cb116-12" tabindex="-1"></a>odds</span></code></pre></div>
 <pre><code>## [1]  2  4  6  8 10</code></pre>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="basic-syntax.html#cb116-1" tabindex="-1"></a>evens</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="basic-syntax.html#cb118-1" tabindex="-1"></a>evens</span></code></pre></div>
 <pre><code>## [1] 1 3 5 7 9</code></pre>
 <p>A neat function in R that makes if/else functions easier is <code>ifelse</code> (just like in Excel), which lets you fit a whole statement in one line:</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="basic-syntax.html#cb118-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb118-2"><a href="basic-syntax.html#cb118-2" tabindex="-1"></a><span class="fu">ifelse</span>(x <span class="sc">==</span> <span class="dv">1</span>, <span class="st">&quot;x equals 1&quot;</span>, <span class="st">&quot;x isn&#39;t equal to 1&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="basic-syntax.html#cb120-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb120-2"><a href="basic-syntax.html#cb120-2" tabindex="-1"></a><span class="fu">ifelse</span>(x <span class="sc">==</span> <span class="dv">1</span>, <span class="st">&quot;x equals 1&quot;</span>, <span class="st">&quot;x isn&#39;t equal to 1&quot;</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;x equals 1&quot;</code></pre>
 </div>
 <div id="functions-1" class="section level3 hasAnchor" number="3.2.4">
 <h3><span class="header-section-number">3.2.4</span> Functions<a href="basic-syntax.html#functions-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Functions in R are defined as following:</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="basic-syntax.html#cb120-1" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">e =</span> <span class="dv">2</span>){</span>
-<span id="cb120-2"><a href="basic-syntax.html#cb120-2" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">^</span>e)</span>
-<span id="cb120-3"><a href="basic-syntax.html#cb120-3" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="basic-syntax.html#cb122-1" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">e =</span> <span class="dv">2</span>){</span>
+<span id="cb122-2"><a href="basic-syntax.html#cb122-2" tabindex="-1"></a>  <span class="fu">return</span>(x<span class="sc">^</span>e)</span>
+<span id="cb122-3"><a href="basic-syntax.html#cb122-3" tabindex="-1"></a>}</span></code></pre></div>
 <p>So it’s very similar to Python. You don’t even need to explicitly say what to return, just a statement would suffice, although typing <code>return</code> is a good habit: sometimes your function can analyze a huge dataset and return nothing because you didn’t explicitly wrote it to return anything! Also, with short functions, you don’t even need to use any curly brackets, so the function above can be stripped all the way to</p>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="basic-syntax.html#cb121-1" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">e =</span> <span class="dv">2</span>) x<span class="sc">^</span>e</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="basic-syntax.html#cb123-1" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="cf">function</span>(x, <span class="at">e =</span> <span class="dv">2</span>) x<span class="sc">^</span>e</span></code></pre></div>
 </div>
 <div id="apply-and-such" class="section level3 hasAnchor" number="3.2.5">
 <h3><span class="header-section-number">3.2.5</span> Apply and such<a href="basic-syntax.html#apply-and-such" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><code>apply</code> is a family of functions that can be used to iterate a function over a multi-element object, just like list comprehension in Python (although apply can be much more complex). For example,</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="basic-syntax.html#cb122-1" tabindex="-1"></a><span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, e)</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="basic-syntax.html#cb124-1" tabindex="-1"></a><span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, e)</span></code></pre></div>
 <pre><code>## [1]  1  4  9 16 25</code></pre>
 <p>We just defined the function <code>e</code> above so that <code>apply</code> knows what it is, but more often you would write temporary functions directly in there (just like lambda functions in Python):</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="basic-syntax.html#cb124-1" tabindex="-1"></a><span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="cf">function</span>(x){</span>
-<span id="cb124-2"><a href="basic-syntax.html#cb124-2" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
-<span id="cb124-3"><a href="basic-syntax.html#cb124-3" tabindex="-1"></a>    <span class="fu">paste</span>(x, <span class="st">&quot;is even&quot;</span>) <span class="co"># btw, + doesn&#39;t concatenate strings in R like in python</span></span>
-<span id="cb124-4"><a href="basic-syntax.html#cb124-4" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
-<span id="cb124-5"><a href="basic-syntax.html#cb124-5" tabindex="-1"></a>    <span class="fu">paste</span>(x, <span class="st">&quot;is odd&quot;</span>)</span>
-<span id="cb124-6"><a href="basic-syntax.html#cb124-6" tabindex="-1"></a>  }</span>
-<span id="cb124-7"><a href="basic-syntax.html#cb124-7" tabindex="-1"></a>})</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="basic-syntax.html#cb126-1" tabindex="-1"></a><span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="cf">function</span>(x){</span>
+<span id="cb126-2"><a href="basic-syntax.html#cb126-2" tabindex="-1"></a>  <span class="cf">if</span> (x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb126-3"><a href="basic-syntax.html#cb126-3" tabindex="-1"></a>    <span class="fu">paste</span>(x, <span class="st">&quot;is even&quot;</span>) <span class="co"># btw, + doesn&#39;t concatenate strings in R like in python</span></span>
+<span id="cb126-4"><a href="basic-syntax.html#cb126-4" tabindex="-1"></a>  }<span class="cf">else</span>{</span>
+<span id="cb126-5"><a href="basic-syntax.html#cb126-5" tabindex="-1"></a>    <span class="fu">paste</span>(x, <span class="st">&quot;is odd&quot;</span>)</span>
+<span id="cb126-6"><a href="basic-syntax.html#cb126-6" tabindex="-1"></a>  }</span>
+<span id="cb126-7"><a href="basic-syntax.html#cb126-7" tabindex="-1"></a>})</span></code></pre></div>
 <pre><code>## [1] &quot;1 is odd&quot;  &quot;2 is even&quot; &quot;3 is odd&quot;  &quot;4 is even&quot; &quot;5 is odd&quot;</code></pre>
 <p><code>sapply</code> is used for simple vectors, <code>lapply</code> – to iterate over a list, and <code>apply</code> – to two-dimensional datasets where you also have to specify a dimension (<code>1</code> for row-wise operations, <code>2</code> – for column-vise), e.g.,</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="basic-syntax.html#cb126-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
-<span id="cb126-2"><a href="basic-syntax.html#cb126-2" tabindex="-1"></a>x</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="basic-syntax.html#cb128-1" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>)</span>
+<span id="cb128-2"><a href="basic-syntax.html#cb128-2" tabindex="-1"></a>x</span></code></pre></div>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    4    7
 ## [2,]    2    5    8
 ## [3,]    3    6    9</code></pre>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="basic-syntax.html#cb128-1" tabindex="-1"></a><span class="fu">apply</span>(x, <span class="dv">1</span>, sum)</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="basic-syntax.html#cb130-1" tabindex="-1"></a><span class="fu">apply</span>(x, <span class="dv">1</span>, sum)</span></code></pre></div>
 <pre><code>## [1] 12 15 18</code></pre>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="basic-syntax.html#cb130-1" tabindex="-1"></a><span class="fu">apply</span>(x, <span class="dv">2</span>, sum)</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="basic-syntax.html#cb132-1" tabindex="-1"></a><span class="fu">apply</span>(x, <span class="dv">2</span>, sum)</span></code></pre></div>
 <pre><code>## [1]  6 15 24</code></pre>
 </div>
 <div id="libraries-1" class="section level3 hasAnchor" number="3.2.6">
 <h3><span class="header-section-number">3.2.6</span> Libraries<a href="basic-syntax.html#libraries-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>R libraries are the same as modules in Python. However, there is a <a href="https://cran.r-project.org/">central archive called CRAN</a> for R libraries that is maintained by the same people who develop and maintain the R language. So you don’t need any external <code>pip</code>s and such, just type directly in R language <code>install.packages("YOUR-PACKAGE-NAME")</code> and it will get installed on your computer. At the beginning of each session, you have to call the package you want to use with a statement <code>library(yourpackagename)</code>. Note that we use quotes for <code>install.packages</code> but not in <code>library</code>.</p>
 <p>CRAN has quite strict requirements to packages, and some packages can be found elsewhere, e.g., GitHub. For example, in my undergrad I developed some utilities for my work that really are redundant relative to big packages like <code>vegan</code>, that is very popular in ecology. You still can install such packages using another package, <code>devtools</code>:</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="basic-syntax.html#cb132-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>) <span class="co"># remember that you only call this once to install it on your computer</span></span>
-<span id="cb132-2"><a href="basic-syntax.html#cb132-2" tabindex="-1"></a><span class="fu">library</span>(devtools) <span class="co"># but this one you call every time you start a new R session</span></span>
-<span id="cb132-3"><a href="basic-syntax.html#cb132-3" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">&quot;OleksiiDubovyk/ancends&quot;</span>) <span class="co"># also only call once</span></span>
-<span id="cb132-4"><a href="basic-syntax.html#cb132-4" tabindex="-1"></a><span class="fu">library</span>(ancends) <span class="co"># and here is my baby</span></span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="basic-syntax.html#cb134-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;devtools&quot;</span>) <span class="co"># remember that you only call this once to install it on your computer</span></span>
+<span id="cb134-2"><a href="basic-syntax.html#cb134-2" tabindex="-1"></a><span class="fu">library</span>(devtools) <span class="co"># but this one you call every time you start a new R session</span></span>
+<span id="cb134-3"><a href="basic-syntax.html#cb134-3" tabindex="-1"></a><span class="fu">install_github</span>(<span class="st">&quot;OleksiiDubovyk/ancends&quot;</span>) <span class="co"># also only call once</span></span>
+<span id="cb134-4"><a href="basic-syntax.html#cb134-4" tabindex="-1"></a><span class="fu">library</span>(ancends) <span class="co"># and here is my baby</span></span></code></pre></div>
+</div>
+</div>
+<div id="exercise" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Exercise<a href="basic-syntax.html#exercise" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exercise-1" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Exercise 1<a href="basic-syntax.html#exercise-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You are going shopping for groceries, and you have a shopping list on you. Once you arrive to the store, you get a text from your partner with some more stuff to buy. Merge these two lists using different approaches: (1) in a single line of code, (2) using a <code>for</code> loop, and (3) using Python’s list comprehension or lambda functions, or R’s apply loops.</p>
+<p>Just to get you started, here are the lists. Define your R vector or Python list objects using appropriate syntax.</p>
+<p><code>your_list</code> contains <code>"apples", "oranges", "bananas", "milk"</code></p>
+<p><code>partner_list</code> contains <code>"flour", "eggs", "potatoes", "cookies", "tea"</code></p>
+<p>You want to end up with an updated <code>your_list</code> containing <code>"apples", "oranges", "bananas", "milk", "flour", "eggs", "potatoes", "cookies", "tea"</code>.</p>
+</div>
+<div id="exercise-2" class="section level3 hasAnchor" number="3.3.2">
+<h3><span class="header-section-number">3.3.2</span> Exercise 2<a href="basic-syntax.html#exercise-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Learn how to deal with such sequences using the example of the updated <code>your_list</code>:</p>
+<ol style="list-style-type: decimal">
+<li><p>Try indexing to return the first 3 and the last 3 elements in the list.</p></li>
+<li><p>Return only the elements that are 5 characters or longer (hint: you can get the string length using <code>len("text")</code> in Python or <code>str_length("text")</code> in R).</p></li>
+</ol>
+</div>
+<div id="exercise-3" class="section level3 hasAnchor" number="3.3.3">
+<h3><span class="header-section-number">3.3.3</span> Exercise 3<a href="basic-syntax.html#exercise-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Create a function that receives an argument of a numeric value and returns “odd” if the number is odd or “even” if the number is, well, even.</p>
+<p>Hint: you might need to use a modulo operator: <code>odd_number %% 2</code> will return <code>0</code>, <code>even_number %% 2</code> will return <code>1</code>.</p>
+<p>Once you get there, to make it even cooler, make this function return a text. E.g., if I call <code>yourfunction(2)</code>, it should return <code>"2 is even"</code>.</p>
+</div>
+<div id="exercise-4" class="section level3 hasAnchor" number="3.3.4">
+<h3><span class="header-section-number">3.3.4</span> Exercise 4<a href="basic-syntax.html#exercise-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Virginia state tax depends on the income. If you make between $0 and $3,000, your tax is 2%; at $3,001 – $5,000 you get taxed $60 plus 3% of any excess over $3,000; at $5,001 – $17,000 you get taxed $120 plus 5% of any excess over $3,000; and if you make more than $17,001, the state will tax you $720 plus 5.75% of any excess over $17,000.</p>
+<p>For example, if one makes $23,456, then they get taxed $720 plus <span class="math inline">\(0.0575 \cdot (23456 - 17000)\)</span>, which is 5.75% of $6,456, totaling $371.22. So the total tax will be $720 + $371.22 = $1091.22</p>
+<p>Your task is, you guessed it, to write a function that receives the annual income and returns the tax owed.</p>
+</div>
+<div id="exercise-5" class="section level3 hasAnchor" number="3.3.5">
+<h3><span class="header-section-number">3.3.5</span> Exercise 5<a href="basic-syntax.html#exercise-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Now, finally, ecological stuff. If you want to describe biological diversity in a community, the easiest way is to count the number of species. For example, imagine a community where you have 2 Carolina Chickadees, 5 American Goldfinches, 3 American Robins, 1 American Crow, 1 House Finch, and 1 Cooper’s Hawk. The total species richness is 6 species, but it doesn’t reflect the distribution of species abundances (e.g., we could have had 1 individual for each species, but still would end up with the species richness of 6). For that, there exist some indices of diversity, for example, Shannon index:</p>
+<p><span class="math display">\[- \sum \limits_{i=1}^S \frac{n_i}{N} \cdot \ln \left( \frac{n_i}{N} \right)\]</span></p>
+<p>where <span class="math inline">\(N\)</span> is the total number of individuals of all species. Here, you have to calculate the ratio of each <span class="math inline">\(i\)</span>th species in the community of <span class="math inline">\(S\)</span> species and estimate the logarithm of those ratios. For our example, we have <span class="math inline">\(S = 6\)</span>, <span class="math inline">\(N = 2 + 5 + 3 + 1 + 1 + 1= 13\)</span>. For Carolina Chickadee, <span class="math inline">\(n_i/N = 2/13 = 0.153\)</span>, for American Goldfinch – <span class="math inline">\(n_i/N = 5/13 = 0.385\)</span>, for American Robin – <span class="math inline">\(n_i/N = 3/13 = 0.231\)</span>, and for everyone else <span class="math inline">\(n_i/N = 1/13 = 0.077\)</span>. Now we need to find logarithms of those values: <span class="math inline">\(\ln (1/13) = -2.57\)</span>, <span class="math inline">\(\ln (2/13) = -1.87\)</span>, <span class="math inline">\(\ln (3/13) = -1.47\)</span>, and <span class="math inline">\(\ln (5/13) = -0.96\)</span>. Now we just multiply <span class="math inline">\((1/13)\cdot\ln(1/13) = -0.197\)</span>, <span class="math inline">\((2/13)\cdot\ln(2/13) = -0.288\)</span>, <span class="math inline">\((3/13)\cdot\ln(3/13) = -0.338\)</span>, and <span class="math inline">\((5/13)\cdot\ln(5/13) = -0.367\)</span>. All we have left is to take a sum of all those values: <span class="math inline">\((-0.197) + (-0.197) + (-0.197) + (-0.288) + (-0.338) + (-0.367) = -1.584\)</span>. And our final answer is to take a negative of that, so that Shannon index for a vector of abundances <span class="math inline">\((1,1,1,2,3,5)\)</span> would be <span class="math inline">\(1.584\)</span>.</p>
+<p>To calculate logarithms in Python, you need to call module <code>math</code> and use a function <code>math.log</code>. In R, it’s just a built-in function <code>log</code>. Now, write a function that takes an argument of a sequence of numbers and returns Shannon index.</p>
 
 </div>
 </div>

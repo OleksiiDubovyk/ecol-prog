@@ -30,3 +30,9 @@ loops-and-ifelse
 functions-1
 apply-and-such
 libraries-1
+exercise
+exercise-1
+exercise-2
+exercise-3
+exercise-4
+exercise-5

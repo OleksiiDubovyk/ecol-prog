@@ -175,6 +175,11 @@ x1 == False
 
 So it is true that the object `x1` is `False`.
 
+```{python}
+False
+```
+
+
 What about strings?
 
 ```{python}
@@ -720,3 +725,50 @@ install_github("OleksiiDubovyk/ancends") # also only call once
 library(ancends) # and here is my baby
 ```
 
+## Exercise
+
+### Exercise 1
+
+You are going shopping for groceries, and you have a shopping list on you. Once you arrive to the store, you get a text from your partner with some more stuff to buy. Merge these two lists using different approaches: (1) in a single line of code, (2) using a `for` loop, and (3) using Python's list comprehension or lambda functions, or R's apply loops.
+
+Just to get you started, here are the lists. Define your R vector or Python list objects using appropriate syntax.
+
+`your_list` contains `"apples", "oranges", "bananas", "milk"`
+
+`partner_list` contains ` "flour", "eggs", "potatoes", "cookies", "tea"`
+
+You want to end up with an updated `your_list` containing `"apples", "oranges", "bananas", "milk", "flour", "eggs", "potatoes", "cookies", "tea"`.
+
+### Exercise 2
+
+Learn how to deal with such sequences using the example of the updated `your_list`:
+
+1. Try indexing to return the first 3 and the last 3 elements in the list.
+
+2. Return only the elements that are 5 characters or longer (hint: you can get the string length using `len("text")` in Python or `str_length("text")` in R).
+
+### Exercise 3
+
+Create a function that receives an argument of a numeric value and returns "odd" if the number is odd or "even" if the number is, well, even.
+
+Hint: you might need to use a modulo operator: `odd_number %% 2` will return `0`, `even_number %% 2` will return `1`.
+
+Once you get there, to make it even cooler, make this function return a text. E.g., if I call `yourfunction(2)`, it should return `"2 is even"`.
+
+### Exercise 4
+
+Virginia state tax depends on the income. If you make between \$0 and \$3,000, your tax is 2%; at \$3,001 -- \$5,000 you get taxed \$60 plus 3% of any excess over \$3,000; at \$5,001 -- \$17,000 you get taxed \$120 plus 5% of any excess over \$3,000; and if you make more than \$17,001, the state will tax you \$720 plus 5.75% of any excess over \$17,000.
+
+For example, if one makes \$23,456, then they get taxed \$720 plus $0.0575 \cdot (23456 - 17000)$, which is 5.75% of \$6,456, totaling \$371.22. So the total tax will be \$720 + \$371.22 = \$1091.22
+
+Your task is, you guessed it, to write a function that receives the annual income and returns the tax owed.
+
+### Exercise 5
+
+Now, finally, ecological stuff. If you want to describe biological diversity in a community, the easiest way is to count the number of species. For example, imagine a community where you have 2 Carolina Chickadees, 5 American Goldfinches, 3 American Robins, 1 American Crow, 1 House Finch, and 1 Cooper's Hawk. The total species richness is 6 species, but it doesn't reflect the distribution of species abundances (e.g., we could have had 1 individual for each species, but still would end up with the species richness of 6). For that, there exist some indices of diversity, for example, Shannon index:
+
+$$- \sum \limits_{i=1}^S \frac{n_i}{N} \cdot \ln \left( \frac{n_i}{N} \right)$$
+
+where $N$ is the total number of individuals of all species. Here, you have to calculate the ratio of each $i$th species in the community of $S$ species and estimate the logarithm of those ratios. For our example, we have $S = 6$, $N = 2 + 5 + 3 + 1 + 1 + 1= 13$. For Carolina Chickadee, $n_i/N = 2/13 = 0.153$, for American Goldfinch -- $n_i/N = 5/13 = 0.385$, for American Robin -- $n_i/N = 3/13 = 0.231$, and for everyone else $n_i/N = 1/13 = 0.077$. Now we need to find logarithms of those values: $\ln (1/13) = -2.57$, $\ln (2/13) = -1.87$, $\ln (3/13) = -1.47$, and $\ln (5/13) = -0.96$. Now we just multiply $(1/13)\cdot\ln(1/13) = -0.197$, $(2/13)\cdot\ln(2/13) = -0.288$, $(3/13)\cdot\ln(3/13) = -0.338$, and $(5/13)\cdot\ln(5/13) = -0.367$. All we have left is to take a sum of all those values: $(-0.197) + (-0.197) + (-0.197) + (-0.288) + (-0.338) + (-0.367) = -1.584$. And our final answer is to take a negative of that, so that Shannon index for a vector of abundances $(1,1,1,2,3,5)$ would be $1.584$.
+
+To calculate logarithms in Python, you need to call module `math` and use a function `math.log`. In R, it's just a built-in function `log`. Now, write a function that takes an argument of a sequence of numbers and returns Shannon index.
