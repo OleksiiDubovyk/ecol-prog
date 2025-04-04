@@ -757,7 +757,7 @@ Once you get there, to make it even cooler, make this function return a text. E.
 
 ### Exercise 4
 
-Virginia state tax depends on the income. If you make between \$0 and \$3,000, your tax is 2%; at \$3,001 -- \$5,000 you get taxed \$60 plus 3% of any excess over \$3,000; at \$5,001 -- \$17,000 you get taxed \$120 plus 5% of any excess over \$3,000; and if you make more than \$17,001, the state will tax you \$720 plus 5.75% of any excess over \$17,000.
+Virginia state tax depends on the income. If you make between \$0 and \$3,000, your tax is 2%; at \$3,001 -- \$5,000 you get taxed \$60 plus 3% of any excess over \$3,000; at \$5,001 -- \$17,000 you get taxed \$120 plus 5% of any excess over \$5,000; and if you make more than \$17,001, the state will tax you \$720 plus 5.75% of any excess over \$17,000.
 
 For example, if one makes \$23,456, then they get taxed \$720 plus $0.0575 \cdot (23456 - 17000)$, which is 5.75% of \$6,456, totaling \$371.22. So the total tax will be \$720 + \$371.22 = \$1091.22
 
@@ -772,3 +772,27 @@ $$- \sum \limits_{i=1}^S \frac{n_i}{N} \cdot \ln \left( \frac{n_i}{N} \right)$$
 where $N$ is the total number of individuals of all species. Here, you have to calculate the ratio of each $i$th species in the community of $S$ species and estimate the logarithm of those ratios. For our example, we have $S = 6$, $N = 2 + 5 + 3 + 1 + 1 + 1= 13$. For Carolina Chickadee, $n_i/N = 2/13 = 0.153$, for American Goldfinch -- $n_i/N = 5/13 = 0.385$, for American Robin -- $n_i/N = 3/13 = 0.231$, and for everyone else $n_i/N = 1/13 = 0.077$. Now we need to find logarithms of those values: $\ln (1/13) = -2.57$, $\ln (2/13) = -1.87$, $\ln (3/13) = -1.47$, and $\ln (5/13) = -0.96$. Now we just multiply $(1/13)\cdot\ln(1/13) = -0.197$, $(2/13)\cdot\ln(2/13) = -0.288$, $(3/13)\cdot\ln(3/13) = -0.338$, and $(5/13)\cdot\ln(5/13) = -0.367$. All we have left is to take a sum of all those values: $(-0.197) + (-0.197) + (-0.197) + (-0.288) + (-0.338) + (-0.367) = -1.584$. And our final answer is to take a negative of that, so that Shannon index for a vector of abundances $(1,1,1,2,3,5)$ would be $1.584$.
 
 To calculate logarithms in Python, you need to call module `math` and use a function `math.log`. In R, it's just a built-in function `log`. Now, write a function that takes an argument of a sequence of numbers and returns Shannon index.
+
+### Excercise 6
+
+Calculate Shannon index in one line of code (hint: list comprehension in Python, `sapply` in R).
+
+### Excercise 7
+
+Imagine that you have a list of values, say, `mylist = ['apple', 'banana', 'apple', 'eggs', 'banana', 'flour', 'apple', 'sugar', 'cheese', 'tortilla', 'tomatoes', 'banana']`. Write a function that would return a dictionary of all unique elements and how many times they are repeated, e.g., `{'apple' : 3, 'banana' : 3, 'eggs' : 1, ...}`. Write another function that returns a list of unique elements, i.e., the elements are not repeated.
+
+### Excercise 8
+
+I installed a motion-activated camera on March 14, 2025, at 9 am, and took it down on March 25, 2025, at 8 am. My study protocol dictates that all setups should be exposed to potential predators for at least 10 full day (e.g., one day is 24 hours elapsed). Write a function that takes two strings representing date-time in a standardized way (e.g., `"2025-03-14 09:00:00"`), and returns `True` if a 10-day requirement was fulfilled. Google shall be used.
+
+### Excercise 9
+
+Ticks activity is mostly dictated by local climatic conditions. For example, the eggs need to be exposed to a certain amount of warm days to hatch. Let's see it this way: if I am an egg, I am looking at the average temperature every week. If it is less than 9°C, I don't do anything. If it is more than 9°C, I count the difference and add it to a cumulative measure (cumulative degree-weeks). I only hatch once I reach, say, 50 CDW. Here are weekly temperatures for 52 weeks in a year:
+
+`t_avg = [5.75, 6.07, 4.85, 3.77, 4.97, 4.39, 3.94, 5.63, 5.79, 7.87, 9.81, 9.92, 10.39, 12.11, 13.02, 13.58, 15.68, 16.81, 17.49, 17.98, 19.51, 22.05, 23.06, 23.88, 24.89, 25.82, 26.2, 26.41, 27.1, 27.41, 26.79, 27.01, 26.15, 25.72, 25.65, 25.18, 23.8, 22.46, 22.16, 20.42, 19.43, 17.57, 16.85, 14.4, 13.05, 12.13, 10.4, 10.14, 8.8, 8.85, 7.61, 8.27]`
+
+If I am a tick, on week one it's too cold -- 5.75°C is less than 9°C, so are all the weeks until 11th. At week 11, I count 0.81°C towards my CDW, at week -- 0.92°C so my CDW is now 1.73°C, at week 13 -- you add 1.39°C and your CDW is now 3.12°C. And so on.
+
+Write a function that generates this rolling CDW for every week for the next 30 weeks. You can repeat the vector of average weekly temperatures, so that the week 53 would have 5.75, week 54 -- 6.07, and so on. The function will take to arguments: a 52-elements-long list `t_avg` and the week at which we start counting cumulative degree-weeks (e.g., 1 if the eggs are laid at the first week of the year).
+
+It can be intimidating. It is difficult to wrap your head around. So it's okay if it's not clear or easy.
