@@ -787,6 +787,12 @@ I installed a motion-activated camera on March 14, 2025, at 9 am, and took it do
 
 ### Excercise 9
 
+You have a list of numeric values. For such a list, a rolling average can be calculated: it means that rather than estimating a mean for all elements in the list, you estimate a mean for some window of values. For example, with a window of 5 elements, you will estimate the mean for elements from 1 to 5, then from 2 to 6, then from 3 to 7, then from 4 to 8. That's right, rolling average for a list is not a single value, but also a list.
+
+Write a function that takes a list of values and a window size, something like `rollingavg(mylist, window = 5)`.
+
+### Excercise 10
+
 Ticks activity is mostly dictated by local climatic conditions. For example, the eggs need to be exposed to a certain amount of warm days to hatch. Let's see it this way: if I am an egg, I am looking at the average temperature every week. If it is less than 9°C, I don't do anything. If it is more than 9°C, I count the difference and add it to a cumulative measure (cumulative degree-weeks). I only hatch once I reach, say, 50 CDW. Here are weekly temperatures for 52 weeks in a year:
 
 `t_avg = [5.75, 6.07, 4.85, 3.77, 4.97, 4.39, 3.94, 5.63, 5.79, 7.87, 9.81, 9.92, 10.39, 12.11, 13.02, 13.58, 15.68, 16.81, 17.49, 17.98, 19.51, 22.05, 23.06, 23.88, 24.89, 25.82, 26.2, 26.41, 27.1, 27.41, 26.79, 27.01, 26.15, 25.72, 25.65, 25.18, 23.8, 22.46, 22.16, 20.42, 19.43, 17.57, 16.85, 14.4, 13.05, 12.13, 10.4, 10.14, 8.8, 8.85, 7.61, 8.27]`
@@ -795,4 +801,6 @@ If I am a tick, on week one it's too cold -- 5.75°C is less than 9°C, so are a
 
 Write a function that generates this rolling CDW for every week for the next 30 weeks. You can repeat the vector of average weekly temperatures, so that the week 53 would have 5.75, week 54 -- 6.07, and so on. The function will take to arguments: a 52-elements-long list `t_avg` and the week at which we start counting cumulative degree-weeks (e.g., 1 if the eggs are laid at the first week of the year).
 
-It can be intimidating. It is difficult to wrap your head around. So it's okay if it's not clear or easy.
+It can be intimidating. It is difficult to wrap your head around. So it's okay if it's not clear nor easy.
+
+

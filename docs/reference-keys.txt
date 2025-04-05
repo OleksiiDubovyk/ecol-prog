@@ -36,3 +36,8 @@ exercise-2
 exercise-3
 exercise-4
 exercise-5
+excercise-6
+excercise-7
+excercise-8
+excercise-9
+excercise-10

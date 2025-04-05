@@ -192,6 +192,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.3" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise-3"><i class="fa fa-check"></i><b>3.3.3</b> Exercise 3</a></li>
 <li class="chapter" data-level="3.3.4" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise-4"><i class="fa fa-check"></i><b>3.3.4</b> Exercise 4</a></li>
 <li class="chapter" data-level="3.3.5" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise-5"><i class="fa fa-check"></i><b>3.3.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="3.3.6" data-path="basic-syntax.html"><a href="basic-syntax.html#excercise-6"><i class="fa fa-check"></i><b>3.3.6</b> Excercise 6</a></li>
+<li class="chapter" data-level="3.3.7" data-path="basic-syntax.html"><a href="basic-syntax.html#excercise-7"><i class="fa fa-check"></i><b>3.3.7</b> Excercise 7</a></li>
+<li class="chapter" data-level="3.3.8" data-path="basic-syntax.html"><a href="basic-syntax.html#excercise-8"><i class="fa fa-check"></i><b>3.3.8</b> Excercise 8</a></li>
+<li class="chapter" data-level="3.3.9" data-path="basic-syntax.html"><a href="basic-syntax.html#excercise-9"><i class="fa fa-check"></i><b>3.3.9</b> Excercise 9</a></li>
+<li class="chapter" data-level="3.3.10" data-path="basic-syntax.html"><a href="basic-syntax.html#excercise-10"><i class="fa fa-check"></i><b>3.3.10</b> Excercise 10</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -438,7 +443,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb65-7"><a href="basic-syntax.html#cb65-7" tabindex="-1"></a>  random_list.append(x) <span class="co"># append the list</span></span>
 <span id="cb65-8"><a href="basic-syntax.html#cb65-8" tabindex="-1"></a></span>
 <span id="cb65-9"><a href="basic-syntax.html#cb65-9" tabindex="-1"></a><span class="bu">print</span>(random_list)</span></code></pre></div>
-<pre><code>## [81, 58, 57, 78, 84, 91, 62, 94, 100, 32]</code></pre>
+<pre><code>## [57, 71, 17, 50, 65, 68, 99, 60, 0, 58]</code></pre>
 <p>You can also use aliases in module names and their parts as following:</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="basic-syntax.html#cb67-1" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
 <span id="cb67-2"><a href="basic-syntax.html#cb67-2" tabindex="-1"></a></span>
@@ -449,7 +454,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb67-7"><a href="basic-syntax.html#cb67-7" tabindex="-1"></a>  random_list.append(x)</span>
 <span id="cb67-8"><a href="basic-syntax.html#cb67-8" tabindex="-1"></a></span>
 <span id="cb67-9"><a href="basic-syntax.html#cb67-9" tabindex="-1"></a><span class="bu">print</span>(random_list)</span></code></pre></div>
-<pre><code>## [7, 43, 24, 76, 42, 31, 28, 79, 64, 34]</code></pre>
+<pre><code>## [74, 44, 93, 32, 78, 59, 22, 65, 86, 31]</code></pre>
 </div>
 <div id="lambda-functions" class="section level3 hasAnchor" number="3.1.8">
 <h3><span class="header-section-number">3.1.8</span> Lambda functions<a href="basic-syntax.html#lambda-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -714,7 +719,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="exercise-4" class="section level3 hasAnchor" number="3.3.4">
 <h3><span class="header-section-number">3.3.4</span> Exercise 4<a href="basic-syntax.html#exercise-4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Virginia state tax depends on the income. If you make between $0 and $3,000, your tax is 2%; at $3,001 – $5,000 you get taxed $60 plus 3% of any excess over $3,000; at $5,001 – $17,000 you get taxed $120 plus 5% of any excess over $3,000; and if you make more than $17,001, the state will tax you $720 plus 5.75% of any excess over $17,000.</p>
+<p>Virginia state tax depends on the income. If you make between $0 and $3,000, your tax is 2%; at $3,001 – $5,000 you get taxed $60 plus 3% of any excess over $3,000; at $5,001 – $17,000 you get taxed $120 plus 5% of any excess over $5,000; and if you make more than $17,001, the state will tax you $720 plus 5.75% of any excess over $17,000.</p>
 <p>For example, if one makes $23,456, then they get taxed $720 plus <span class="math inline">\(0.0575 \cdot (23456 - 17000)\)</span>, which is 5.75% of $6,456, totaling $371.22. So the total tax will be $720 + $371.22 = $1091.22</p>
 <p>Your task is, you guessed it, to write a function that receives the annual income and returns the tax owed.</p>
 </div>
@@ -724,6 +729,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><span class="math display">\[- \sum \limits_{i=1}^S \frac{n_i}{N} \cdot \ln \left( \frac{n_i}{N} \right)\]</span></p>
 <p>where <span class="math inline">\(N\)</span> is the total number of individuals of all species. Here, you have to calculate the ratio of each <span class="math inline">\(i\)</span>th species in the community of <span class="math inline">\(S\)</span> species and estimate the logarithm of those ratios. For our example, we have <span class="math inline">\(S = 6\)</span>, <span class="math inline">\(N = 2 + 5 + 3 + 1 + 1 + 1= 13\)</span>. For Carolina Chickadee, <span class="math inline">\(n_i/N = 2/13 = 0.153\)</span>, for American Goldfinch – <span class="math inline">\(n_i/N = 5/13 = 0.385\)</span>, for American Robin – <span class="math inline">\(n_i/N = 3/13 = 0.231\)</span>, and for everyone else <span class="math inline">\(n_i/N = 1/13 = 0.077\)</span>. Now we need to find logarithms of those values: <span class="math inline">\(\ln (1/13) = -2.57\)</span>, <span class="math inline">\(\ln (2/13) = -1.87\)</span>, <span class="math inline">\(\ln (3/13) = -1.47\)</span>, and <span class="math inline">\(\ln (5/13) = -0.96\)</span>. Now we just multiply <span class="math inline">\((1/13)\cdot\ln(1/13) = -0.197\)</span>, <span class="math inline">\((2/13)\cdot\ln(2/13) = -0.288\)</span>, <span class="math inline">\((3/13)\cdot\ln(3/13) = -0.338\)</span>, and <span class="math inline">\((5/13)\cdot\ln(5/13) = -0.367\)</span>. All we have left is to take a sum of all those values: <span class="math inline">\((-0.197) + (-0.197) + (-0.197) + (-0.288) + (-0.338) + (-0.367) = -1.584\)</span>. And our final answer is to take a negative of that, so that Shannon index for a vector of abundances <span class="math inline">\((1,1,1,2,3,5)\)</span> would be <span class="math inline">\(1.584\)</span>.</p>
 <p>To calculate logarithms in Python, you need to call module <code>math</code> and use a function <code>math.log</code>. In R, it’s just a built-in function <code>log</code>. Now, write a function that takes an argument of a sequence of numbers and returns Shannon index.</p>
+</div>
+<div id="excercise-6" class="section level3 hasAnchor" number="3.3.6">
+<h3><span class="header-section-number">3.3.6</span> Excercise 6<a href="basic-syntax.html#excercise-6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Calculate Shannon index in one line of code (hint: list comprehension in Python, <code>sapply</code> in R).</p>
+</div>
+<div id="excercise-7" class="section level3 hasAnchor" number="3.3.7">
+<h3><span class="header-section-number">3.3.7</span> Excercise 7<a href="basic-syntax.html#excercise-7" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Imagine that you have a list of values, say, <code>mylist = ['apple', 'banana', 'apple', 'eggs', 'banana', 'flour', 'apple', 'sugar', 'cheese', 'tortilla', 'tomatoes', 'banana']</code>. Write a function that would return a dictionary of all unique elements and how many times they are repeated, e.g., <code>{'apple' : 3, 'banana' : 3, 'eggs' : 1, ...}</code>. Write another function that returns a list of unique elements, i.e., the elements are not repeated.</p>
+</div>
+<div id="excercise-8" class="section level3 hasAnchor" number="3.3.8">
+<h3><span class="header-section-number">3.3.8</span> Excercise 8<a href="basic-syntax.html#excercise-8" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>I installed a motion-activated camera on March 14, 2025, at 9 am, and took it down on March 25, 2025, at 8 am. My study protocol dictates that all setups should be exposed to potential predators for at least 10 full day (e.g., one day is 24 hours elapsed). Write a function that takes two strings representing date-time in a standardized way (e.g., <code>"2025-03-14 09:00:00"</code>), and returns <code>True</code> if a 10-day requirement was fulfilled. Google shall be used.</p>
+</div>
+<div id="excercise-9" class="section level3 hasAnchor" number="3.3.9">
+<h3><span class="header-section-number">3.3.9</span> Excercise 9<a href="basic-syntax.html#excercise-9" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You have a list of numeric values. For such a list, a rolling average can be calculated: it means that rather than estimating a mean for all elements in the list, you estimate a mean for some window of values. For example, with a window of 5 elements, you will estimate the mean for elements from 1 to 5, then from 2 to 6, then from 3 to 7, then from 4 to 8. That’s right, rolling average for a list is not a single value, but also a list.</p>
+<p>Write a function that takes a list of values and a window size, something like <code>rollingavg(mylist, window = 5)</code>.</p>
+</div>
+<div id="excercise-10" class="section level3 hasAnchor" number="3.3.10">
+<h3><span class="header-section-number">3.3.10</span> Excercise 10<a href="basic-syntax.html#excercise-10" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ticks activity is mostly dictated by local climatic conditions. For example, the eggs need to be exposed to a certain amount of warm days to hatch. Let’s see it this way: if I am an egg, I am looking at the average temperature every week. If it is less than 9°C, I don’t do anything. If it is more than 9°C, I count the difference and add it to a cumulative measure (cumulative degree-weeks). I only hatch once I reach, say, 50 CDW. Here are weekly temperatures for 52 weeks in a year:</p>
+<p><code>t_avg = [5.75, 6.07, 4.85, 3.77, 4.97, 4.39, 3.94, 5.63, 5.79, 7.87, 9.81, 9.92, 10.39, 12.11, 13.02, 13.58, 15.68, 16.81, 17.49, 17.98, 19.51, 22.05, 23.06, 23.88, 24.89, 25.82, 26.2, 26.41, 27.1, 27.41, 26.79, 27.01, 26.15, 25.72, 25.65, 25.18, 23.8, 22.46, 22.16, 20.42, 19.43, 17.57, 16.85, 14.4, 13.05, 12.13, 10.4, 10.14, 8.8, 8.85, 7.61, 8.27]</code></p>
+<p>If I am a tick, on week one it’s too cold – 5.75°C is less than 9°C, so are all the weeks until 11th. At week 11, I count 0.81°C towards my CDW, at week – 0.92°C so my CDW is now 1.73°C, at week 13 – you add 1.39°C and your CDW is now 3.12°C. And so on.</p>
+<p>Write a function that generates this rolling CDW for every week for the next 30 weeks. You can repeat the vector of average weekly temperatures, so that the week 53 would have 5.75, week 54 – 6.07, and so on. The function will take to arguments: a 52-elements-long list <code>t_avg</code> and the week at which we start counting cumulative degree-weeks (e.g., 1 if the eggs are laid at the first week of the year).</p>
+<p>It can be intimidating. It is difficult to wrap your head around. So it’s okay if it’s not clear nor easy.</p>
 
 </div>
 </div>
