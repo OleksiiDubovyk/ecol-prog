@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Python’s numpy and pandas | Quick R/Python Beginner Guide for Ecologists</title>
+  <meta name="description" content="Chapter 4 Python’s numpy and pandas | Quick R/Python Beginner Guide for Ecologists" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Python’s numpy and pandas | Quick R/Python Beginner Guide for Ecologists" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Python’s numpy and pandas | Quick R/Python Beginner Guide for Ecologists" />
+  
+  
+  
+
+<meta name="author" content="Oleksii Dubovyk" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="basic-syntax.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R/Python Cheatsheet</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html"><i class="fa fa-check"></i><b>1</b> Getting started (what is IDE?)</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#python"><i class="fa fa-check"></i><b>1.1</b> Python</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#installing-python"><i class="fa fa-check"></i><b>1.1.1</b> Installing Python</a></li>
+<li class="chapter" data-level="1.1.2" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#visual-studio-code"><i class="fa fa-check"></i><b>1.1.2</b> Visual Studio Code</a></li>
+<li class="chapter" data-level="1.1.3" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#pycharm"><i class="fa fa-check"></i><b>1.1.3</b> PyCharm</a></li>
+<li class="chapter" data-level="1.1.4" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#spyder"><i class="fa fa-check"></i><b>1.1.4</b> Spyder</a></li>
+<li class="chapter" data-level="1.1.5" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#rstudio"><i class="fa fa-check"></i><b>1.1.5</b> RStudio</a></li>
+<li class="chapter" data-level="1.1.6" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#jupiter"><i class="fa fa-check"></i><b>1.1.6</b> Jupiter</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#r"><i class="fa fa-check"></i><b>1.2</b> R</a>
+<ul>
+<li class="chapter" data-level="1.2.1" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#installing-r"><i class="fa fa-check"></i><b>1.2.1</b> Installing R</a></li>
+<li class="chapter" data-level="1.2.2" data-path="getting-started-what-is-ide.html"><a href="getting-started-what-is-ide.html#rstudio-1"><i class="fa fa-check"></i><b>1.2.2</b> RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="objects-and-data-types.html"><a href="objects-and-data-types.html"><i class="fa fa-check"></i><b>2</b> Objects and data types</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="objects-and-data-types.html"><a href="objects-and-data-types.html#python-1"><i class="fa fa-check"></i><b>2.1</b> Python</a></li>
+<li class="chapter" data-level="2.2" data-path="objects-and-data-types.html"><a href="objects-and-data-types.html#r-1"><i class="fa fa-check"></i><b>2.2</b> R</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="basic-syntax.html"><a href="basic-syntax.html"><i class="fa fa-check"></i><b>3</b> Basic syntax</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="basic-syntax.html"><a href="basic-syntax.html#python-2"><i class="fa fa-check"></i><b>3.1</b> Python</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="basic-syntax.html"><a href="basic-syntax.html#create-and-play-with-variables"><i class="fa fa-check"></i><b>3.1.1</b> Create and play with variables</a></li>
+<li class="chapter" data-level="3.1.2" data-path="basic-syntax.html"><a href="basic-syntax.html#operators"><i class="fa fa-check"></i><b>3.1.2</b> Operators</a></li>
+<li class="chapter" data-level="3.1.3" data-path="basic-syntax.html"><a href="basic-syntax.html#comments"><i class="fa fa-check"></i><b>3.1.3</b> Comments</a></li>
+<li class="chapter" data-level="3.1.4" data-path="basic-syntax.html"><a href="basic-syntax.html#loops"><i class="fa fa-check"></i><b>3.1.4</b> Loops</a></li>
+<li class="chapter" data-level="3.1.5" data-path="basic-syntax.html"><a href="basic-syntax.html#ifelse"><i class="fa fa-check"></i><b>3.1.5</b> If/else</a></li>
+<li class="chapter" data-level="3.1.6" data-path="basic-syntax.html"><a href="basic-syntax.html#functions"><i class="fa fa-check"></i><b>3.1.6</b> Functions</a></li>
+<li class="chapter" data-level="3.1.7" data-path="basic-syntax.html"><a href="basic-syntax.html#libraries"><i class="fa fa-check"></i><b>3.1.7</b> Libraries</a></li>
+<li class="chapter" data-level="3.1.8" data-path="basic-syntax.html"><a href="basic-syntax.html#lambda-functions"><i class="fa fa-check"></i><b>3.1.8</b> Lambda functions</a></li>
+<li class="chapter" data-level="3.1.9" data-path="basic-syntax.html"><a href="basic-syntax.html#list-comprehension"><i class="fa fa-check"></i><b>3.1.9</b> List comprehension</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="basic-syntax.html"><a href="basic-syntax.html#r-2"><i class="fa fa-check"></i><b>3.2</b> R</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="basic-syntax.html"><a href="basic-syntax.html#create-and-play-with-variables-1"><i class="fa fa-check"></i><b>3.2.1</b> Create and play with variables</a></li>
+<li class="chapter" data-level="3.2.2" data-path="basic-syntax.html"><a href="basic-syntax.html#operators-and-comments"><i class="fa fa-check"></i><b>3.2.2</b> Operators and comments</a></li>
+<li class="chapter" data-level="3.2.3" data-path="basic-syntax.html"><a href="basic-syntax.html#loops-and-ifelse"><i class="fa fa-check"></i><b>3.2.3</b> Loops and if/else</a></li>
+<li class="chapter" data-level="3.2.4" data-path="basic-syntax.html"><a href="basic-syntax.html#functions-1"><i class="fa fa-check"></i><b>3.2.4</b> Functions</a></li>
+<li class="chapter" data-level="3.2.5" data-path="basic-syntax.html"><a href="basic-syntax.html#apply-and-such"><i class="fa fa-check"></i><b>3.2.5</b> Apply and such</a></li>
+<li class="chapter" data-level="3.2.6" data-path="basic-syntax.html"><a href="basic-syntax.html#libraries-1"><i class="fa fa-check"></i><b>3.2.6</b> Libraries</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise"><i class="fa fa-check"></i><b>3.3</b> Exercise</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise-1"><i class="fa fa-check"></i><b>3.3.1</b> Exercise 1</a></li>
+<li class="chapter" data-level="3.3.2" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise-2"><i class="fa fa-check"></i><b>3.3.2</b> Exercise 2</a></li>
+<li class="chapter" data-level="3.3.3" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise-3"><i class="fa fa-check"></i><b>3.3.3</b> Exercise 3</a></li>
+<li class="chapter" data-level="3.3.4" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise-4"><i class="fa fa-check"></i><b>3.3.4</b> Exercise 4</a></li>
+<li class="chapter" data-level="3.3.5" data-path="basic-syntax.html"><a href="basic-syntax.html#exercise-5"><i class="fa fa-check"></i><b>3.3.5</b> Exercise 5</a></li>
+<li class="chapter" data-level="3.3.6" data-path="basic-syntax.html"><a href="basic-syntax.html#excercise-6"><i class="fa fa-check"></i><b>3.3.6</b> Excercise 6</a></li>
+<li class="chapter" data-level="3.3.7" data-path="basic-syntax.html"><a href="basic-syntax.html#excercise-7"><i class="fa fa-check"></i><b>3.3.7</b> Excercise 7</a></li>
+<li class="chapter" data-level="3.3.8" data-path="basic-syntax.html"><a href="basic-syntax.html#excercise-8"><i class="fa fa-check"></i><b>3.3.8</b> Excercise 8</a></li>
+<li class="chapter" data-level="3.3.9" data-path="basic-syntax.html"><a href="basic-syntax.html#excercise-9"><i class="fa fa-check"></i><b>3.3.9</b> Excercise 9</a></li>
+<li class="chapter" data-level="3.3.10" data-path="basic-syntax.html"><a href="basic-syntax.html#excercise-10"><i class="fa fa-check"></i><b>3.3.10</b> Excercise 10</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html"><i class="fa fa-check"></i><b>4</b> Python’s numpy and pandas</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#numpy"><i class="fa fa-check"></i><b>4.1</b> numpy</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#array-properties"><i class="fa fa-check"></i><b>4.1.1</b> Array properties</a></li>
+<li class="chapter" data-level="4.1.2" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#element-wise-operations"><i class="fa fa-check"></i><b>4.1.2</b> Element-wise operations</a></li>
+<li class="chapter" data-level="4.1.3" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#careful-with-changes"><i class="fa fa-check"></i><b>4.1.3</b> Careful with changes</a></li>
+<li class="chapter" data-level="4.1.4" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#indexing"><i class="fa fa-check"></i><b>4.1.4</b> Indexing</a></li>
+<li class="chapter" data-level="4.1.5" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#functions-2"><i class="fa fa-check"></i><b>4.1.5</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#pandas"><i class="fa fa-check"></i><b>4.2</b> pandas</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#series"><i class="fa fa-check"></i><b>4.2.1</b> Series</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Quick R/Python Beginner Guide for Ecologists</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="pythons-numpy-and-pandas" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Python’s numpy and pandas<a href="pythons-numpy-and-pandas.html#pythons-numpy-and-pandas" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="numpy" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> numpy<a href="pythons-numpy-and-pandas.html#numpy" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>NumPy stands for Numerical Python, and it is a basic package for any numerical analyses. See the <a href="https://numpy.org/install/">documentation</a> for installation procedure, it is most likely that you will have to deal with pip or conda.</p>
+<p>Conventionally, this package gets an alias <code>np</code> in the scripts, but of course you can call it as you want:</p>
+<div class="sourceCode" id="cb135"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb135-1"><a href="pythons-numpy-and-pandas.html#cb135-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span></code></pre></div>
+<p>Here are some useful functions:</p>
+<div class="sourceCode" id="cb136"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb136-1"><a href="pythons-numpy-and-pandas.html#cb136-1" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb136-2"><a href="pythons-numpy-and-pandas.html#cb136-2" tabindex="-1"></a></span>
+<span id="cb136-3"><a href="pythons-numpy-and-pandas.html#cb136-3" tabindex="-1"></a>mydata <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">3.5</span>, <span class="op">-</span><span class="dv">1</span>] <span class="co"># a conventional python list</span></span>
+<span id="cb136-4"><a href="pythons-numpy-and-pandas.html#cb136-4" tabindex="-1"></a>mydata</span></code></pre></div>
+<pre><code>## [1, 2, 3.5, -1]</code></pre>
+<div class="sourceCode" id="cb138"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb138-1"><a href="pythons-numpy-and-pandas.html#cb138-1" tabindex="-1"></a>arr <span class="op">=</span> np.array(mydata) <span class="co"># rewriting as nupy array</span></span>
+<span id="cb138-2"><a href="pythons-numpy-and-pandas.html#cb138-2" tabindex="-1"></a>arr</span></code></pre></div>
+<pre><code>## array([ 1. ,  2. ,  3.5, -1. ])</code></pre>
+<p>It doesn’t look much better or more convenient. Mostly because one uses numpy for performance (data structures like arrays are supposed to use less memory) rather than convenience.</p>
+<div id="array-properties" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Array properties<a href="pythons-numpy-and-pandas.html#array-properties" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Let’s see some properties of the array object.</p>
+<div class="sourceCode" id="cb140"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb140-1"><a href="pythons-numpy-and-pandas.html#cb140-1" tabindex="-1"></a>arr.dtype</span></code></pre></div>
+<pre><code>## dtype(&#39;float64&#39;)</code></pre>
+<div class="sourceCode" id="cb142"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb142-1"><a href="pythons-numpy-and-pandas.html#cb142-1" tabindex="-1"></a>arr.shape</span></code></pre></div>
+<pre><code>## (4,)</code></pre>
+<div class="sourceCode" id="cb144"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb144-1"><a href="pythons-numpy-and-pandas.html#cb144-1" tabindex="-1"></a>arr.ndim</span></code></pre></div>
+<pre><code>## 1</code></pre>
+<p>How about multidimensional data?</p>
+<div class="sourceCode" id="cb146"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb146-1"><a href="pythons-numpy-and-pandas.html#cb146-1" tabindex="-1"></a>mydata2 <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">3.5</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="fl">2.2</span>, <span class="dv">5</span>]]</span>
+<span id="cb146-2"><a href="pythons-numpy-and-pandas.html#cb146-2" tabindex="-1"></a></span>
+<span id="cb146-3"><a href="pythons-numpy-and-pandas.html#cb146-3" tabindex="-1"></a>arr2 <span class="op">=</span> np.array(mydata2)</span>
+<span id="cb146-4"><a href="pythons-numpy-and-pandas.html#cb146-4" tabindex="-1"></a>arr2</span></code></pre></div>
+<pre><code>## array([[ 1. ,  2. ,  3.5, -1. ,  0. ],
+##        [ 9. ,  7. ,  4. ,  2.2,  5. ]])</code></pre>
+<div class="sourceCode" id="cb148"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb148-1"><a href="pythons-numpy-and-pandas.html#cb148-1" tabindex="-1"></a>arr2.shape</span></code></pre></div>
+<pre><code>## (2, 5)</code></pre>
+<div class="sourceCode" id="cb150"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb150-1"><a href="pythons-numpy-and-pandas.html#cb150-1" tabindex="-1"></a>np.reshape(arr2, (<span class="dv">5</span>, <span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## array([[ 1. ,  2. ],
+##        [ 3.5, -1. ],
+##        [ 0. ,  9. ],
+##        [ 7. ,  4. ],
+##        [ 2.2,  5. ]])</code></pre>
+</div>
+<div id="element-wise-operations" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Element-wise operations<a href="pythons-numpy-and-pandas.html#element-wise-operations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Just like R basic syntax, arithmetic is element-wise with arrays:</p>
+<div class="sourceCode" id="cb152"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb152-1"><a href="pythons-numpy-and-pandas.html#cb152-1" tabindex="-1"></a>arr2 <span class="op">*</span> <span class="dv">2</span></span></code></pre></div>
+<pre><code>## array([[ 2. ,  4. ,  7. , -2. ,  0. ],
+##        [18. , 14. ,  8. ,  4.4, 10. ]])</code></pre>
+<div class="sourceCode" id="cb154"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb154-1"><a href="pythons-numpy-and-pandas.html#cb154-1" tabindex="-1"></a>arr2[<span class="dv">0</span>] <span class="op">+</span> arr[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## array([3. , 4. , 5.5, 1. , 2. ])</code></pre>
+<div class="sourceCode" id="cb156"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb156-1"><a href="pythons-numpy-and-pandas.html#cb156-1" tabindex="-1"></a>arr2[<span class="dv">0</span>] <span class="op">&gt;</span> arr[<span class="dv">1</span>]</span></code></pre></div>
+<pre><code>## array([False, False,  True, False, False])</code></pre>
+</div>
+<div id="careful-with-changes" class="section level3 hasAnchor" number="4.1.3">
+<h3><span class="header-section-number">4.1.3</span> Careful with changes<a href="pythons-numpy-and-pandas.html#careful-with-changes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It’s important to remember that operations on numpy objects are designed to be memory efficient. Therefore, if you commit in operation on a subset or a copy of an object, it will be reflected on the original object:</p>
+<div class="sourceCode" id="cb158"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb158-1"><a href="pythons-numpy-and-pandas.html#cb158-1" tabindex="-1"></a>x <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb158-2"><a href="pythons-numpy-and-pandas.html#cb158-2" tabindex="-1"></a>y <span class="op">=</span> x</span>
+<span id="cb158-3"><a href="pythons-numpy-and-pandas.html#cb158-3" tabindex="-1"></a>y[<span class="dv">2</span>] <span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb158-4"><a href="pythons-numpy-and-pandas.html#cb158-4" tabindex="-1"></a>x</span></code></pre></div>
+<pre><code>## array([  1,   2, 100,   4,   5])</code></pre>
+</div>
+<div id="indexing" class="section level3 hasAnchor" number="4.1.4">
+<h3><span class="header-section-number">4.1.4</span> Indexing<a href="pythons-numpy-and-pandas.html#indexing" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>By the way, indexing in arrays is similar to lists, with square brackets. In two-dimensional arrays, you specify a row first, then column.</p>
+<div class="sourceCode" id="cb160"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb160-1"><a href="pythons-numpy-and-pandas.html#cb160-1" tabindex="-1"></a>arr2</span></code></pre></div>
+<pre><code>## array([[ 1. ,  2. ,  3.5, -1. ,  0. ],
+##        [ 9. ,  7. ,  4. ,  2.2,  5. ]])</code></pre>
+<div class="sourceCode" id="cb162"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb162-1"><a href="pythons-numpy-and-pandas.html#cb162-1" tabindex="-1"></a>arr2[<span class="dv">0</span>, <span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## np.float64(3.5)</code></pre>
+<div class="sourceCode" id="cb164"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb164-1"><a href="pythons-numpy-and-pandas.html#cb164-1" tabindex="-1"></a>arr2[<span class="dv">0</span>][<span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## np.float64(3.5)</code></pre>
+</div>
+<div id="functions-2" class="section level3 hasAnchor" number="4.1.5">
+<h3><span class="header-section-number">4.1.5</span> Functions<a href="pythons-numpy-and-pandas.html#functions-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Numpy has some useful functions for arrays, e.g.,</p>
+<div class="sourceCode" id="cb166"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb166-1"><a href="pythons-numpy-and-pandas.html#cb166-1" tabindex="-1"></a>x <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb166-2"><a href="pythons-numpy-and-pandas.html#cb166-2" tabindex="-1"></a></span>
+<span id="cb166-3"><a href="pythons-numpy-and-pandas.html#cb166-3" tabindex="-1"></a>np.mean(x)</span></code></pre></div>
+<pre><code>## np.float64(3.0)</code></pre>
+<div class="sourceCode" id="cb168"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb168-1"><a href="pythons-numpy-and-pandas.html#cb168-1" tabindex="-1"></a>np.<span class="bu">sum</span>(x)</span></code></pre></div>
+<pre><code>## np.int64(15)</code></pre>
+<div class="sourceCode" id="cb170"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb170-1"><a href="pythons-numpy-and-pandas.html#cb170-1" tabindex="-1"></a>np.sin(x)</span></code></pre></div>
+<pre><code>## array([ 0.84147098,  0.90929743,  0.14112001, -0.7568025 , -0.95892427])</code></pre>
+<p>These functions can also be used for two-dimensional arrays, just don’t forget to specify the dimension (0 - row-wise, 1 - column-wise).</p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb172-1"><a href="pythons-numpy-and-pandas.html#cb172-1" tabindex="-1"></a>x <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="fl">3.5</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">9</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="fl">2.2</span>, <span class="dv">5</span>]])</span>
+<span id="cb172-2"><a href="pythons-numpy-and-pandas.html#cb172-2" tabindex="-1"></a></span>
+<span id="cb172-3"><a href="pythons-numpy-and-pandas.html#cb172-3" tabindex="-1"></a>np.<span class="bu">sum</span>(x)</span></code></pre></div>
+<pre><code>## np.float64(32.7)</code></pre>
+<div class="sourceCode" id="cb174"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb174-1"><a href="pythons-numpy-and-pandas.html#cb174-1" tabindex="-1"></a>np.<span class="bu">sum</span>(x, axis <span class="op">=</span> <span class="dv">0</span>)</span></code></pre></div>
+<pre><code>## array([10. ,  9. ,  7.5,  1.2,  5. ])</code></pre>
+<div class="sourceCode" id="cb176"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb176-1"><a href="pythons-numpy-and-pandas.html#cb176-1" tabindex="-1"></a>np.<span class="bu">sum</span>(x, axis <span class="op">=</span> <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## array([ 5.5, 27.2])</code></pre>
+</div>
+</div>
+<div id="pandas" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> pandas<a href="pythons-numpy-and-pandas.html#pandas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Pandas is the first package every data scientist will ever load in their python script. Again, you will need touse pip or conda to <a href="https://pandas.pydata.org/docs/getting_started/install.html">install</a> pandas. Conventionally, we load this package under alias <code>pd</code>:</p>
+<pre><code>## Warning in py_install(&quot;pandas&quot;): An ephemeral virtual environment managed by &#39;reticulate&#39; is currently in use.
+## To add more packages to your current session, call `py_require()` instead
+## of `py_install()`. Running:
+##   `py_require(&quot;pandas&quot;)`</code></pre>
+<div class="sourceCode" id="cb179"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb179-1"><a href="pythons-numpy-and-pandas.html#cb179-1" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code></pre></div>
+<div id="series" class="section level3 hasAnchor" number="4.2.1">
+<h3><span class="header-section-number">4.2.1</span> Series<a href="pythons-numpy-and-pandas.html#series" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Series in pandas is similar to arrays in numpy, and you can imagine it is as one column in some data table. For example, have a community with 2 Carolina Chickadees, 5 American Goldfinches, 3 American Robins, 1 American Crow, 1 House Finch, and 1 Cooper’s Hawk.</p>
+<div class="sourceCode" id="cb180"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb180-1"><a href="pythons-numpy-and-pandas.html#cb180-1" tabindex="-1"></a>abundances <span class="op">=</span> pd.Series([<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>])</span>
+<span id="cb180-2"><a href="pythons-numpy-and-pandas.html#cb180-2" tabindex="-1"></a>abundances</span></code></pre></div>
+<pre><code>## 0    2
+## 1    5
+## 2    3
+## 3    1
+## 4    1
+## 5    1
+## dtype: int64</code></pre>
+<p>If we looked at these abundances, the object above is not too helpful: we just don’t know what these values correspond to! Well, we can create an index of names there.</p>
+<div class="sourceCode" id="cb182"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb182-1"><a href="pythons-numpy-and-pandas.html#cb182-1" tabindex="-1"></a>abundances <span class="op">=</span> pd.Series([<span class="dv">2</span>, <span class="dv">5</span>, <span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>], index <span class="op">=</span> [<span class="st">&quot;CACH&quot;</span>, <span class="st">&quot;AMGO&quot;</span>, <span class="st">&quot;AMRO&quot;</span>, <span class="st">&quot;AMCR&quot;</span>, <span class="st">&quot;HOFI&quot;</span>, <span class="st">&quot;COHA&quot;</span>])</span>
+<span id="cb182-2"><a href="pythons-numpy-and-pandas.html#cb182-2" tabindex="-1"></a>abundances</span></code></pre></div>
+<pre><code>## CACH    2
+## AMGO    5
+## AMRO    3
+## AMCR    1
+## HOFI    1
+## COHA    1
+## dtype: int64</code></pre>
+<p>We can reference these values or their subsets as a usual list or using an index name:</p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb184-1"><a href="pythons-numpy-and-pandas.html#cb184-1" tabindex="-1"></a>abundances[:<span class="dv">3</span>]</span></code></pre></div>
+<pre><code>## CACH    2
+## AMGO    5
+## AMRO    3
+## dtype: int64</code></pre>
+<div class="sourceCode" id="cb186"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb186-1"><a href="pythons-numpy-and-pandas.html#cb186-1" tabindex="-1"></a>abundances[<span class="st">&quot;AMRO&quot;</span>]</span></code></pre></div>
+<pre><code>## np.int64(3)</code></pre>
+<p>Note that the index names have to be unique. In that sense, named series are similar to basic Python dictionaries:</p>
+<div class="sourceCode" id="cb188"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb188-1"><a href="pythons-numpy-and-pandas.html#cb188-1" tabindex="-1"></a>pd.Series({<span class="st">&quot;CACH&quot;</span> : <span class="dv">2</span>, <span class="st">&quot;AMGO&quot;</span> : <span class="dv">5</span>, <span class="st">&quot;AMRO&quot;</span> : <span class="dv">3</span>, <span class="st">&quot;AMCR&quot;</span> : <span class="dv">1</span>, <span class="st">&quot;HOFI&quot;</span> : <span class="dv">1</span>, <span class="st">&quot;COHA&quot;</span> : <span class="dv">1</span>})</span></code></pre></div>
+<pre><code>## CACH    2
+## AMGO    5
+## AMRO    3
+## AMCR    1
+## HOFI    1
+## COHA    1
+## dtype: int64</code></pre>
+<p>We also can index series based on value, e.g., return only those values that are larger than some threshold:</p>
+<div class="sourceCode" id="cb190"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb190-1"><a href="pythons-numpy-and-pandas.html#cb190-1" tabindex="-1"></a>abundances[abundances <span class="op">&gt;=</span> <span class="dv">2</span>]</span></code></pre></div>
+<pre><code>## CACH    2
+## AMGO    5
+## AMRO    3
+## dtype: int64</code></pre>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="basic-syntax.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/index.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

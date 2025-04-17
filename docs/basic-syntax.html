@@ -30,7 +30,7 @@
   
   
 <link rel="prev" href="objects-and-data-types.html"/>
-
+<link rel="next" href="pythons-numpy-and-pandas.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -197,6 +197,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.3.8" data-path="basic-syntax.html"><a href="basic-syntax.html#excercise-8"><i class="fa fa-check"></i><b>3.3.8</b> Excercise 8</a></li>
 <li class="chapter" data-level="3.3.9" data-path="basic-syntax.html"><a href="basic-syntax.html#excercise-9"><i class="fa fa-check"></i><b>3.3.9</b> Excercise 9</a></li>
 <li class="chapter" data-level="3.3.10" data-path="basic-syntax.html"><a href="basic-syntax.html#excercise-10"><i class="fa fa-check"></i><b>3.3.10</b> Excercise 10</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html"><i class="fa fa-check"></i><b>4</b> Python’s numpy and pandas</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#numpy"><i class="fa fa-check"></i><b>4.1</b> numpy</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#array-properties"><i class="fa fa-check"></i><b>4.1.1</b> Array properties</a></li>
+<li class="chapter" data-level="4.1.2" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#element-wise-operations"><i class="fa fa-check"></i><b>4.1.2</b> Element-wise operations</a></li>
+<li class="chapter" data-level="4.1.3" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#careful-with-changes"><i class="fa fa-check"></i><b>4.1.3</b> Careful with changes</a></li>
+<li class="chapter" data-level="4.1.4" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#indexing"><i class="fa fa-check"></i><b>4.1.4</b> Indexing</a></li>
+<li class="chapter" data-level="4.1.5" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#functions-2"><i class="fa fa-check"></i><b>4.1.5</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#pandas"><i class="fa fa-check"></i><b>4.2</b> pandas</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="pythons-numpy-and-pandas.html"><a href="pythons-numpy-and-pandas.html#series"><i class="fa fa-check"></i><b>4.2.1</b> Series</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -443,7 +458,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb65-7"><a href="basic-syntax.html#cb65-7" tabindex="-1"></a>  random_list.append(x) <span class="co"># append the list</span></span>
 <span id="cb65-8"><a href="basic-syntax.html#cb65-8" tabindex="-1"></a></span>
 <span id="cb65-9"><a href="basic-syntax.html#cb65-9" tabindex="-1"></a><span class="bu">print</span>(random_list)</span></code></pre></div>
-<pre><code>## [57, 71, 17, 50, 65, 68, 99, 60, 0, 58]</code></pre>
+<pre><code>## [14, 98, 49, 1, 14, 49, 82, 80, 35, 4]</code></pre>
 <p>You can also use aliases in module names and their parts as following:</p>
 <div class="sourceCode" id="cb67"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb67-1"><a href="basic-syntax.html#cb67-1" tabindex="-1"></a><span class="im">import</span> random <span class="im">as</span> rand</span>
 <span id="cb67-2"><a href="basic-syntax.html#cb67-2" tabindex="-1"></a></span>
@@ -454,7 +469,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb67-7"><a href="basic-syntax.html#cb67-7" tabindex="-1"></a>  random_list.append(x)</span>
 <span id="cb67-8"><a href="basic-syntax.html#cb67-8" tabindex="-1"></a></span>
 <span id="cb67-9"><a href="basic-syntax.html#cb67-9" tabindex="-1"></a><span class="bu">print</span>(random_list)</span></code></pre></div>
-<pre><code>## [74, 44, 93, 32, 78, 59, 22, 65, 86, 31]</code></pre>
+<pre><code>## [100, 95, 41, 24, 75, 19, 32, 31, 83, 5]</code></pre>
 </div>
 <div id="lambda-functions" class="section level3 hasAnchor" number="3.1.8">
 <h3><span class="header-section-number">3.1.8</span> Lambda functions<a href="basic-syntax.html#lambda-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -754,7 +769,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>If I am a tick, on week one it’s too cold – 5.75°C is less than 9°C, so are all the weeks until 11th. At week 11, I count 0.81°C towards my CDW, at week – 0.92°C so my CDW is now 1.73°C, at week 13 – you add 1.39°C and your CDW is now 3.12°C. And so on.</p>
 <p>Write a function that generates this rolling CDW for every week for the next 30 weeks. You can repeat the vector of average weekly temperatures, so that the week 53 would have 5.75, week 54 – 6.07, and so on. The function will take to arguments: a 52-elements-long list <code>t_avg</code> and the week at which we start counting cumulative degree-weeks (e.g., 1 if the eggs are laid at the first week of the year).</p>
 <p>It can be intimidating. It is difficult to wrap your head around. So it’s okay if it’s not clear nor easy.</p>
-
 </div>
 </div>
 </div>
@@ -763,8 +777,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="objects-and-data-types.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="objects-and-data-types.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="pythons-numpy-and-pandas.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

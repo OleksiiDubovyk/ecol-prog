@@ -41,3 +41,12 @@ excercise-7
 excercise-8
 excercise-9
 excercise-10
+pythons-numpy-and-pandas
+numpy
+array-properties
+element-wise-operations
+careful-with-changes
+indexing
+functions-2
+pandas
+series

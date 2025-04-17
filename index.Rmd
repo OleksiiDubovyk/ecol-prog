@@ -805,7 +805,7 @@ It can be intimidating. It is difficult to wrap your head around. So it's okay i
 
 # Python's numpy and pandas
 
-##numpy
+## numpy
 
 NumPy stands for Numerical Python, and it is a basic package for any numerical analyses. See the [documentation](https://numpy.org/install/) for installation procedure, it is most likely that you will have to deal with pip or conda.
 
@@ -907,6 +907,12 @@ np.sum(x, axis = 1)
 ## pandas
 
 Pandas is the first package every data scientist will ever load in their python script. Again, you will need touse pip or conda to [install](https://pandas.pydata.org/docs/getting_started/install.html) pandas. Conventionally, we load this package under alias `pd`:
+
+```{r eval=T, echo=F}
+library(reticulate)
+py_install("pandas")
+```
+
 
 ```{python}
 import pandas as pd
